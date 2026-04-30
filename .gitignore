@@ -1,0 +1,9 @@
+sensitive.py
+*.json
+!salesdictionary.json
+!purchasedictionary.json
+/__pycache__
+*.pyc
+*.pyo
+*.csv
+*.csv

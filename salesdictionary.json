@@ -1,0 +1,6368 @@
+{
+    "SUCO AÇAÍ COM LARANJA 300 ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.2,
+            "unidade": "UN"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUCO LARANJA PRATS - INSUMO": {
+            "quantidade": 0.1,
+            "unidade": "L"
+        }
+    },
+    "COPO AÇAÍ 500ML*": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.45,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COPO 500 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE AÇAI COM CHOCOLATE 70%": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BOMBOM DE AÇAI COM CHOCOLATE 70% - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SELO DE ALUMINIO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE AÇAI COM CHOCOLATE BRANCO": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BOMBOM DE AÇAI COM CHOCOLATE BRANCO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SELO DE ALUMINIO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQUINHA AÇAI": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.15,
+            "unidade": "UN"
+        },
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQUINHA IOGURTE": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.15,
+            "unidade": "L"
+        }
+    },
+    "CASCÃO AÇAI*": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.2,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCÃO IOGURTE*": {
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.2,
+            "unidade": "L"
+        }
+    },
+    "COPO AÇAÍ 300ML*": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.25,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SUCO AÇAÍ COM LARANJA 500 ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.25,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUCO LARANJA PRATS - INSUMO": {
+            "quantidade": 0.25,
+            "unidade": "L"
+        },
+        "GARRAFAS 500 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DARK COBERTO CHOCOLATE": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BOMBOM DARK COBERTO CHOCOLATE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SELO DE ALUMINIO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "POTE MISTO 1 LITRO": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "POTE 1L ISOPOR": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 1L ISOPOR": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.5,
+            "unidade": "L"
+        }
+    },
+    "COPO 120 ML CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML BANANA CARAMELIZADA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTINHA  AÇAÍ": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.22,
+            "unidade": "UN"
+        },
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE COM GELATO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CAFE TRUFADO 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CHOCOLATE BELGA 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "DOCE DE LEITE 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE C/ AMARENA 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "MANGA ZERO 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "COPO 210 ML BANANA CARAMELIZADA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 210 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CUPUAÇU 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "COPO MISTO 300ML*": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.12,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.12,
+            "unidade": "L"
+        }
+    },
+    "COPO MISTO 500ML*": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.22,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COPO 500 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.22,
+            "unidade": "L"
+        }
+    },
+    "CASQUINHA MISTA  AÇAÍ COM IOGURTE": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.07,
+            "unidade": "UN"
+        },
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.07,
+            "unidade": "L"
+        }
+    },
+    "CASCÃO MISTO AÇAÍ COM IOGURTE*": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.1,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.1,
+            "unidade": "L"
+        }
+    },
+    "COPO IOGURTE 300ML*": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.25,
+            "unidade": "L"
+        }
+    },
+    "COPO IOGURTE 500ML*": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COPO 500 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.45,
+            "unidade": "L"
+        }
+    },
+    "COPO 120 ML COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIES & CREAM 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE C/ AMARENA POTE 240 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE C/ AMARENA POTE 240 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIES & CREAM POTE 240 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COOKIES & CREAM POTE 240 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CHOCOLATE BELGA 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CHOCOLATE BELGA 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "MILHO VERDE 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "MILHO VERDE 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 210 ML PAÇOCA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PAÇOCA 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "FONDUE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BANANA COMPRA": {
+            "quantidade": 0.13,
+            "unidade": "KG"
+        },
+        "MORANGO  COMPRA": {
+            "quantidade": 0.09,
+            "unidade": "KG"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "COPO 120 ML MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML AÇAÍ ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML LIMAO SICILIANO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO LIMAO SICILIANO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CAFE TRUFADO 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CAFE TRUFADO 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "DOCE DE LEITE POTE 240 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "DOCE DE LEITE POTE 240 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM BAUNILHA COBERTO COM CHOCOLATE": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BOMBOM DE BAUNILHA COBERTO COM CHOCOLATE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SELO DE ALUMINIO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "MORANGO 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "AÇAÍ ZERO 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "LIMÃO SICILIANO 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO LIMAO SICILIANO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CREME  1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "MILHO VERDE 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CESTINHA MISTA  AÇAÍ COM IOGURTE": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.12,
+            "unidade": "UN"
+        },
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.12,
+            "unidade": "L"
+        }
+    },
+    "CESTINHA IOGURTE NATURAL": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.25,
+            "unidade": "L"
+        }
+    },
+    "BANANA": {
+        "BANANA COMPRA": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "MORANGO  (FRUTA)": {
+        "MORANGO  COMPRA": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "GRANOLA": {
+        "GRANOLA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "FAROFA DE PAÇOCA": {
+        "FAROFA DE PAÇOCA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "LEITE CONDENSADO": {
+        "LEITE CONDENSADO - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE MARACUJA": {
+        "CALDA DE MARACUJA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE FRUTAS VERMELHAS": {
+        "CALDA DE FRUTAS VERMELHAS - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE AMARENA": {
+        "CALDA DE AMARENA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE CHOCOLATE": {
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE BANANA CARAMELIZADA": {
+        "CALDA DE BANANA CARAMELIZADA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "LEITE EM PÓ": {
+        "LEITE EM PÓ - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "MEL": {
+        "MEL - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "COPO 120 ML PAÇOCA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CARAMELO SALGADO POTE 240 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CARAMELO SALGADO POTE 240 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "MANGA ZERO 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "MANGA ZERO 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PISTACHE POTE 240 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "PISTACHE POTE 240 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "AÇAI NATURAL POTE 250 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "AÇAI NATURAL POTE 250 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CALDA DE AMARENA 1 L": {
+        "CALDA DE AMARENA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "KG"
+        }
+    },
+    "COPO 120 ML PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BIJU ADICIONAL": {
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        }
+    },
+    "CASCÃO AVULSO (GD)": {
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "TANGERINA 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TANGERINA 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CUPUAÇU 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CUPUAÇU 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SUCO AÇAÍ 300 ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.3,
+            "unidade": "UN"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SUCO  AÇAÍ 500 ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GARRAFAS 500 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "MORANGO 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "MORANGO 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE FR VERM ZERO POTE 240 ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE FR VERM ZERO POTE 240 ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "AÇAI ZERO 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "AÇAI ZERO 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCÃO PISTACHE GOURMET": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.2,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GRANULADO PISTACHE GRANELLATO - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "CALDA DE PISTACHE GANACHE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "CASQUINHA PISTACHE GOURMET": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.15,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GRANULADO PISTACHE GRANELLATO - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "CALDA DE PISTACHE GANACHE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "COPO 210 PISTACHE GOURMET": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GRANULADO PISTACHE GRANELLATO - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "CALDA DE PISTACHE GANACHE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "COPO 120 PISTACHE GOURMET": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GRANULADO PISTACHE GRANELLATO - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "CALDA DE PISTACHE GANACHE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "CARAMELO SALGADO  1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "PISTACHE 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "FRUTAS VERMELHAS ZERO 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML FRUTAS VERMELHAS ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE C/FV ZERO INDIVIDUAL": {
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "MANGA ZERO INDIVIDUAL": {
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "BAUNILHA PET GELATO": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BAUNILHA PET GELATO - INSUMO": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "ALFARROBA PET GELATO": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "ALFARROBA PET GELATO - INSUMO": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "MORANGO PET GELATO": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "MORANGO PET GELATO - INSUMO": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "BACON PET GELATO": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BACON PET GELATO - INSUMO": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "POMAR PET BAUNILHA (EM PÓ)": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POMAR PET BAUNILHA (EM PÓ) - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "POMAR PET ALFARROBA (EM PÓ)": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POMAR PET ALFARROBA (EM PÓ) - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "POMAR PET MORANGO (EM PÓ)": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POMAR PET MORANGO (EM PÓ) - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "POMAR PET BACON (EM PÓ)": {
+        "POTE 100ML GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA GELATO PET": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POMAR PET BACON (EM PÓ) - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "TANGERINA 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM PISTACHE": {
+        "BOMBOM DE PISTACHE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE MASSA": {
+        "LEITE TIPO A": {
+            "quantidade": 0.8,
+            "unidade": "L"
+        },
+        "MISTURA EM PÓ FROZEN IOGURTE NATURAL": {
+            "quantidade": 0.2,
+            "unidade": "KG"
+        }
+    },
+    "COPO 120 ML CREME": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "MARACUJA 240ML": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "MARACUJA 240ML - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ CAFE TRUFADO": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ AÇAI NATURAL": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ AÇAI ZERO": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ CARAMELO SALGADO": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ CHOCOLATE BELGA": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ CUPUAÇU": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ DOCE DE LEITE": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ IOGURTE C/ AMARENA": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ LIMAO SICILIANO": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO LIMAO SICILIANO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ MANGA ZERO": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ MILHO VERDE": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ MORANGO": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ PISTACHE": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ COOKIES & CREAM": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ TANGERINA": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ IORG C/ FRUTAS VERMELHAS": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASQ CREME": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO AÇAI NATURAL": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO AÇAI ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO IORG C/ FRUTAS VERMELHAS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO CREME": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTINHA CAFE TRUFADO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA AÇAI NATURAL": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        }
+    },
+    "CASCAO 1/2 CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 AÇAI NATURAL": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 AÇAI ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CESTINHA AÇAI ZERO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CASCAO 1/2 MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 IORG C/ FRUTAS VERMELHAS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CASCAO 1/2 CREME": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "CESTINHA CARAMELO SALGADO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA CHOCOLATE BELGA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA CUPUAÇU": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA DOCE DE LEITE": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA IOGURTE C/ AMARENA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA MANGA ZERO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA MILHO VERDE": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA MORANGO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST CAFE TRUFADO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA PISTACHE": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA COOKIES & CREAM": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA TANGERINA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA IORG C/ FRUTAS VERMELHAS": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA CREME": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST AÇAI NATURAL": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST AÇAI ZERO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST CARAMELO SALGADO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST CHOCOLATE BELGA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST CUPUAÇU": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST DOCE DE LEITE": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST IOGURTE C/ AMARENA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST MANGA ZERO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST MILHO VERDE": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST MORANGO": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST PISTACHE": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST COOKIES & CREAM": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST TANGERINA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST IORG C/ FRUTAS VERMELHAS": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "AÇAI POTE 210ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.2,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 210 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE POTE 210ML": {
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 210 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "AÇAÍ COM IOGURTE POTE 210ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.1,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.1,
+            "unidade": "L"
+        },
+        "POTE 210 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "AÇAI POTE 120 ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.15,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "IOGURTE POTE 120ML": {
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.15,
+            "unidade": "L"
+        }
+    },
+    "AÇAÍ COM IOGURTE POTE 120ML": {
+        "BALDE AÇAI KG": {
+            "quantidade": 0.07,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.07,
+            "unidade": "L"
+        }
+    },
+    "CAFÉ NO CONE": {
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CAFE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "SANDWICHE + GELATO": {
+        "CESTO DE CHURROS  - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "1/2 CEST CREME": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "COPO 120 ML SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "SPECULOS 1/2": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST SPECULOS": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA SPECULOS": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CASCAO SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CASCAO 1/2 SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "CASQ SPECULOS": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "CREME 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        }
+    },
+    "MILK SHAKE CARAMELO SALGADO": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE CHOCOLATE BELGA": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE CUPUAÇU": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE DOCE DE LEITE": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE MILHO VERDE": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE MANGA ZERO": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE MORANGO": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE PISTACHE": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE CAFE TRUFADO": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE COOKIES & CREAM": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE TANGERINA": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE IOGURTE COM FRUTAS VERMELHAS ZERO": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE CREME": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE SPECULOS PREMIUM": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE MARACUJA - MS": {
+        "CALDA DE MARACUJA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE FRUTAS VERMELHAS - MS": {
+        "CALDA DE FRUTAS VERMELHAS - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE AMARENA - MS": {
+        "CALDA DE AMARENA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE CHOCOLATE - MS": {
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE BANANA CARAMELIZADA - MS": {
+        "CALDA DE BANANA CARAMELIZADA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "MEL - MS": {
+        "MEL - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE CARAMELO SALGADO - MS": {
+        "CALDA DE CARAMELO SALGADO - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE PISTACHE GANACHE - MS": {
+        "CALDA DE PISTACHE GANACHE - INSUMO": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "COMPL ADICIONAIS": {
+        "FAROFA DE PAÇOCA - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "COOKIE + CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + AÇAÍ ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + FRUTAS VERMELHAS ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE + CREME": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COOKIE+ SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + AÇAÍ ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + FRUTAS VERMELHAS ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + CREME": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "PETIT + SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + AÇAÍ ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + FRUTAS VERMELHAS ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + CREME": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "GELATO CREME": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "WAFFLE + SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE DOCE DE LEITE": {
+        "BOMBOM DE DOCE DE LEITE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM MARACUJÁ": {
+        "BOMBOM DE MARACUJA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE CAFE": {
+        "BOMBOM DE CAFE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE BRIGADEIRO": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SELO DE ALUMINIO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BOMBOM DE BRIGADEIRO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE MORANGO": {
+        "POTE 240ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA POTE 240 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SELO DE ALUMINIO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BOMBOM DE MORANGO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM DE CUPUAÇU": {
+        "BOMBOM DE CUPUAÇU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BOMBOM PROTEICO DE CHOCOLATE": {
+        "BOMBOM PROTEICO DE CHOCOLATE- INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "BANANA GRATIS": {
+        "BANANA COMPRA": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        }
+    },
+    "MORANGO GRATIS": {
+        "MORANGO  COMPRA": {
+            "quantidade": 0.03,
+            "unidade": "KG"
+        }
+    },
+    "GRANOLA GRATIS": {
+        "GRANOLA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "FAROFA DE PAÇOCA GRATIS": {
+        "FAROFA DE PAÇOCA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "LEITE CONDENSADO GRATIS": {
+        "LEITE CONDENSADO - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE MARACUJA GRATIS": {
+        "CALDA DE MARACUJA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE FRUTAS VERMELHAS GRATIS": {
+        "CALDA DE FRUTAS VERMELHAS - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE AMARENA GRATIS": {
+        "CALDA DE AMARENA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE CHOCOLATE GRATIS": {
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CALDA DE BANANA CARAMELIZADA GRATIS": {
+        "CALDA DE BANANA CARAMELIZADA - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "LEITE EM PÓ GRATIS": {
+        "LEITE EM PÓ - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "MEL GRATIS": {
+        "MEL - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CASQUINHA AVULSO (PQ) GRATIS": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CASCÃO AVULSO (GD) GRATIS": {
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CAPPUCCINO NO CONE": {
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CAPPUCCINO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "LARANGURT 500ML": {
+        "SUCO LARANJA PRATS - INSUMO": {
+            "quantidade": 0.2,
+            "unidade": "L"
+        },
+        "GARRAFAS 500 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "IOGURTE MASSA": {
+            "quantidade": 0.3,
+            "unidade": "L"
+        },
+        "CALDA DE CARAMELO SALGADO - INSUMO": {
+            "quantidade": 0.02,
+            "unidade": "KG"
+        }
+    },
+    "CASQUINHA ADICIONAL": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CAFE": {
+        "COPO CAFE 50ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CAFE - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CAPPUCCINO": {
+        "COPO CAFE 50ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CAPPUCCINO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "COPO 120 ML MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "POTE 120 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "MARACUJA 1/2 CP210": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "POTE 210 ML": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "CASQ MARACUJA": {
+        "CASQUINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "CASCAO MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "CASCAO 1/2 MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CASCÃO - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "SUPORTE CASQUINHA": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "CESTINHA MARACUJA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.21,
+            "unidade": "KG"
+        }
+    },
+    "1/2 CEST MARACUJA": {
+        "CESTINHA - INSUMO": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "COLHER ROXA AÇAI": {
+            "quantidade": 0.5,
+            "unidade": "UN"
+        },
+        "CANUDINHO BIJU - INSUMO": {
+            "quantidade": 0.0,
+            "unidade": "KG"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.1,
+            "unidade": "KG"
+        }
+    },
+    "MILK SHAKE MARACUJA": {
+        "LEITE TIPO A": {
+            "quantidade": 0.03,
+            "unidade": "L"
+        },
+        "COPO 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "CANUDO MILKSHAKE": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "TAMPA 300 ML": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.22,
+            "unidade": "KG"
+        }
+    },
+    "COOKIE + MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "PETIT + MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "PETIT GATEU - INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "WAFFLE + MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GUARDANAPO": {
+            "quantidade": 2.0,
+            "unidade": "UN"
+        },
+        "CALDA DE CHOCOLATE - INSUMO": {
+            "quantidade": 0.01,
+            "unidade": "KG"
+        },
+        "BARCA": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "WAFFLE INSUMO": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        }
+    },
+    "CESTO CHURROS AÇAI NATURAL": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE DE CHURROS + GELATO": {
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO DE CHURROS + GELATO": {
+        "CESTO DE CHURROS  - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS AÇAI NATURAL": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS AÇAI ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS LIMAO SICILIANO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO LIMAO SICILIANO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS IORG C/ FRUTAS VERMELHAS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE AÇAI NATURAL": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE CHURROS MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS AÇAI ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS LIMAO SICILIANO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO LIMAO SICILIANO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS IORG C/ FRUTAS VERMELHAS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE CAFE TRUFADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CAFE TRUFADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE AÇAI ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAI ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE CARAMELO SALGADO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CARAMELO SALGADO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE CHOCOLATE BELGA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CHOCOLATE BELGA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE CUPUAÇU": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO CUPUAÇU": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE DOCE DE LEITE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO DOCE DE LEITE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE IOGURTE C/ AMARENA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE C/ AMARENA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE LIMAO SICILIANO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO LIMAO SICILIANO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE MANGA ZERO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MANGA ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE MILHO VERDE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MILHO VERDE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE MORANGO": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MORANGO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE PISTACHE": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO PISTACHE": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE COOKIES & CREAM": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO COOKIES & CREAM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE TANGERINA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO TANGERINA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE IORG C/ FRUTAS VERMELHAS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO IOGURTE COM FRUTAS VERMELHAS ZERO": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE SPECULOS": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO SPECULOS PREMIUM": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE MARACUJA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE AÇAI SOFT": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE IOGURTE SOFT": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE BAUNILHA SOFT": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CONE MISTO SOFT": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO AÇAÍ NATURAL": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "CESTO CHURROS BAUNILHA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    },
+    "SANDWICHE BAUNILHA": {
+        "COLHER ROXA AÇAI": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        },
+        "GELATO MARACUJA": {
+            "quantidade": 0.12,
+            "unidade": "KG"
+        },
+        "CHURROS FORMATO DE CONE - INSUMOS": {
+            "quantidade": 1.0,
+            "unidade": "UN"
+        }
+    }
+}
