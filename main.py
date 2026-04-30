@@ -190,17 +190,14 @@ elif st.session_state.fase == 'mapeamento':
 
             item_selecionado = st.selectbox("Pesquise e selecione o item correspondente do sistema:", opcoes_itens)
             
-            # Busca a unidade correspondente à seleção atual no CSV[cite: 18]
             unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
 
-            # Mensagem de input com unidade dinâmica[cite: 18]
             fator_conv = st.number_input(
                 f"Fator de Conversão (Quantos(as) '{unidade_csv}' de '{item_selecionado}' equivalem a 1 '{item_atual['nome']}'?)", 
                 min_value=0.001, 
                 value=1.0
             )
 
-            # Resumo com unidade dinâmica[cite: 18]
             st.markdown(f"> **Resumo da Relação:** Ao comprar 1x `{item_atual['nome']}`, o sistema adicionará **{fator_conv}x {unidade_csv}** de `{item_selecionado}`.")
 
             if st.button("✅ Sim, tenho certeza. Salvar Relação", type="primary"):
@@ -230,10 +227,31 @@ elif st.session_state.fase == 'finalizacao':
         
         data_hoje = datetime.now().strftime('%Y%m%d')
         arquivo_final = f'ITE_{data_hoje}.csv'
+        arquivo_dict = "purchasedictionary.json"
         
-        if os.path.exists(arquivo_final):
-            with open(arquivo_final, "rb") as f:
-                st.download_button("⬇️ Baixar Arquivo de Importação (CSV)", f, file_name=arquivo_final, mime="text/csv")
+        col_down1, col_down2 = st.columns(2)
+        
+        with col_down1:
+            if os.path.exists(arquivo_final):
+                with open(arquivo_final, "rb") as f:
+                    st.download_button(
+                        label="⬇️ Baixar Importação (CSV)", 
+                        data=f, 
+                        file_name=arquivo_final, 
+                        mime="text/csv",
+                        use_container_width=True
+                    )
+        
+        with col_down2:
+            if os.path.exists(arquivo_dict):
+                with open(arquivo_dict, "rb") as f:
+                    st.download_button(
+                        label="⬇️ Baixar Dicionário Atualizado (JSON)",
+                        data=f,
+                        file_name="purchasedictionary.json",
+                        mime="application/json",
+                        use_container_width=True
+                    )
             
         if os.path.exists("temp_vendas.csv"): os.remove("temp_vendas.csv")
     
