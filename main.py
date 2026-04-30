@@ -139,13 +139,11 @@ if st.session_state.fase == 'inicio':
             except FileNotFoundError:
                 p_dict = {}
 
-            # Monta uma lista simples com todos os nomes que o dicionário já conhece
             nomes_conhecidos = []
             for v in p_dict.values():
                 for s in v.get("sinonimos", []):
                     nomes_conhecidos.append(s["nome"])
 
-            # Filtra o que está na nota e não está no dicionário
             nao_mapeados = [item for item in compras_totais if item["nome"] not in nomes_conhecidos]
 
             if nao_mapeados:
@@ -168,7 +166,7 @@ elif st.session_state.fase == 'mapeamento':
 
         col_ignorar, col_relacionar = st.columns(2)
         if col_ignorar.button("❌ Ignorar item", use_container_width=True):
-            remover_compra(item_atual['nome']) # Tira do fluxo
+            remover_compra(item_atual['nome'])
             st.session_state.itens_pendentes.pop(0)
             st.session_state.modo_relacionar = False
             st.rerun()
@@ -180,7 +178,6 @@ elif st.session_state.fase == 'mapeamento':
             st.divider()
             st.markdown("### Procurar Item no Cadastro")
             
-            # Carrega o CSV de itens cadastrados
             try:
                 df_cadastrados = pd.read_csv("ItensCadastrados.csv", sep=";")
                 if 'Nome' not in df_cadastrados.columns or 'Unidade' not in df_cadastrados.columns:
@@ -188,18 +185,25 @@ elif st.session_state.fase == 'mapeamento':
                     st.stop()
                 opcoes_itens = df_cadastrados['Nome'].dropna().tolist()
             except FileNotFoundError:
-                st.error("Erro: Arquivo 'ItensCadastrados.csv' não encontrado na pasta raiz!")
+                st.error("Erro: Arquivo 'ItensCadastrados.csv' não encontrado!")
                 st.stop()
 
-            # Campo de pesquisa listando itens do CSV
             item_selecionado = st.selectbox("Pesquise e selecione o item correspondente do sistema:", opcoes_itens)
-            fator_conv = st.number_input(f"Fator de Conversão (Quantas unidades de '{item_selecionado}' equivalem a 1 '{item_atual['nome']}'?)", min_value=0.001, value=1.0)
+            
+            # Busca a unidade correspondente à seleção atual no CSV[cite: 18]
+            unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
 
-            st.markdown(f"> **Resumo da Relação:** Ao comprar 1x `{item_atual['nome']}`, o sistema adicionará **{fator_conv}x** de `{item_selecionado}`.")
+            # Mensagem de input com unidade dinâmica[cite: 18]
+            fator_conv = st.number_input(
+                f"Fator de Conversão (Quantos(as) '{unidade_csv}' de '{item_selecionado}' equivalem a 1 '{item_atual['nome']}'?)", 
+                min_value=0.001, 
+                value=1.0
+            )
 
-            # Pergunta final de certeza
+            # Resumo com unidade dinâmica[cite: 18]
+            st.markdown(f"> **Resumo da Relação:** Ao comprar 1x `{item_atual['nome']}`, o sistema adicionará **{fator_conv}x {unidade_csv}** de `{item_selecionado}`.")
+
             if st.button("✅ Sim, tenho certeza. Salvar Relação", type="primary"):
-                unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
                 adicionar_ao_dicionario(item_selecionado, str(unidade_csv), item_atual['nome'], fator_conv)
                 st.success("Relação adicionada ao dicionário!")
                 
@@ -207,7 +211,6 @@ elif st.session_state.fase == 'mapeamento':
                 st.session_state.modo_relacionar = False
                 st.rerun()
     else:
-        # Quando a lista de pendentes esvazia, avança para o final
         st.session_state.fase = 'finalizacao'
         st.rerun()
 
@@ -221,7 +224,6 @@ elif st.session_state.fase == 'finalizacao':
         if not os.path.exists("produtos_contagem.json"):
             with open("produtos_contagem.json", "w") as f: json.dump([], f)
         
-        # Como limpamos os itens ignorados e mapeamos os restantes, o addpurchase.py rodará sem gerar novos erros
         consolidar_com_dicionario("produtos_contagem.json", "produtos_compra.json", "purchasedictionary.json", "estoque_adicionado_compra.json")
         deduzir_vendas("estoque_adicionado_compra.json", "resultado_vendas.json", "salesdictionary.json", "estoque_final.json")
         converter_estoque_para_csv("estoque_final.json")
