@@ -4,15 +4,49 @@ import email
 import re
 import os
 import json
+import pandas as pd # Necessário para ler o CSV de itens cadastrados
 from datetime import datetime
 
-# Importações dos seus módulos existentes
+# Importações dos módulos existentes
 from umovextractor import extrair_produtos
 from nfextractor import extrair_dados_tabresult
 from report_converter import convert_report
 from addpurchase import consolidar_com_dicionario
 from salesdeducer import processar_estoque as deduzir_vendas
 from importconverter import converter_estoque_para_csv
+
+# --- FUNÇÕES DE AUXÍLIO PARA DICIONÁRIO E COMPRAS ---
+def remover_compra(nome_nota):
+    """Remove um item ignorado do JSON de compras para que ele não trave a consolidação."""
+    with open("produtos_compra.json", "r", encoding="utf-8") as f:
+        compras = json.load(f)
+    compras = [c for c in compras if c['nome'] != nome_nota]
+    with open("produtos_compra.json", "w", encoding="utf-8") as f:
+        json.dump(compras, f, ensure_ascii=False, indent=4)
+
+def adicionar_ao_dicionario(nome_cadastrado, unidade, nome_nota, fator):
+    """Atualiza e exporta o purchasedictionary.json com a nova relação e unidade do CSV."""
+    arquivo_dict = "purchasedictionary.json"
+    try:
+        with open(arquivo_dict, "r", encoding="utf-8") as f:
+            dicionario = json.load(f)[cite: 15, 17]
+    except FileNotFoundError:
+        dicionario = {}
+
+    if nome_cadastrado not in dicionario:
+        dicionario[nome_cadastrado] = {"unidade": unidade, "sinonimos": []}[cite: 17]
+
+    # Verifica se o sinônimo já existe para evitar duplicatas
+    sinonimos = dicionario[nome_cadastrado]["sinonimos"]
+    if not any(s["nome"] == nome_nota for s in sinonimos):
+        sinonimos.append({
+            "nome": nome_nota,
+            "quantidade": fator,
+            "unidade": "UN" # Padrão para a nota[cite: 17]
+        })
+
+    with open(arquivo_dict, "w", encoding="utf-8") as f:
+        json.dump(dicionario, f, ensure_ascii=False, indent=4)[cite: 15]
 
 # 1. Função para buscar link via e-mail sem sensitive.py
 def buscar_link_email(email_login, password):
@@ -24,7 +58,6 @@ def buscar_link_email(email_login, password):
         email_ids = messages[0].split()
 
         if not email_ids:
-            st.warning("Nenhum email de 'noreply@umov.me' encontrado.")
             return None
 
         latest_email_id = email_ids[-1]
@@ -45,98 +78,165 @@ def buscar_link_email(email_login, password):
         st.error(f"Erro de conexão IMAP: {e}")
         return None
 
-# --- INICIALIZAÇÃO DO ESTADO (Para múltiplas URLs de NF) ---
-if 'lista_nfe' not in st.session_state:
-    st.session_state.lista_nfe = [""] # Inicia com um campo vazio
+# --- INICIALIZAÇÃO DA MÁQUINA DE ESTADOS ---
+if 'fase' not in st.session_state: st.session_state.fase = 'inicio'
+if 'lista_nfe' not in st.session_state: st.session_state.lista_nfe = [""]
+if 'itens_pendentes' not in st.session_state: st.session_state.itens_pendentes = []
+if 'modo_relacionar' not in st.session_state: st.session_state.modo_relacionar = False
 
-# --- CONFIGURAÇÃO DA INTERFACE ---
 st.set_page_config(page_title="Automação de Estoque", layout="centered")
 st.title("📦 Sistema de Automação de Estoque")
 
-# 1. Credenciais IMAP
-st.header("1. Acesso à Contagem (uMov.me)")
-col1, col2 = st.columns(2)
-with col1:
-    email_usuario = st.text_input("E-mail IMAP", placeholder="usuario@dominio.com")
-with col2:
-    senha_usuario = st.text_input("Senha IMAP", type="password")
+# ==========================================
+# FASE 0: PREENCHIMENTO DO FORMULÁRIO
+# ==========================================
+if st.session_state.fase == 'inicio':
+    st.header("1. Acesso à Contagem (uMov.me)")
+    col1, col2 = st.columns(2)
+    with col1: email_usuario = st.text_input("E-mail IMAP", placeholder="usuario@dominio.com")
+    with col2: senha_usuario = st.text_input("Senha IMAP", type="password")
 
-# 2. Notas Fiscais de Compra (Dinâmico)
-st.header("2. Notas Fiscais de Compra (NFC-e)")
-for i, url in enumerate(st.session_state.lista_nfe):
-    st.session_state.lista_nfe[i] = st.text_input(
-        f"URL da Nota Fiscal {i+1}", 
-        value=url, 
-        key=f"nfe_{i}",
-        placeholder="Cole o link da consulta pública aqui..."
-    )
+    st.header("2. Notas Fiscais de Compra (NFC-e)")
+    for i, url in enumerate(st.session_state.lista_nfe):
+        st.session_state.lista_nfe[i] = st.text_input(f"URL da Nota Fiscal {i+1}", value=url, key=f"nfe_{i}")
 
-if st.button("➕ Adicionar outra Nota"):
-    st.session_state.lista_nfe.append("")
-    st.rerun()
+    if st.button("➕ Adicionar outra Nota"):
+        st.session_state.lista_nfe.append("")
+        st.rerun()
 
-# 3. Relatório de Vendas
-st.header("3. Relatório de Vendas")
-arquivo_vendas = st.file_uploader("Faça upload do relatório ABC de Vendas (.csv)", type=["csv"])
+    st.header("3. Relatório de Vendas")
+    arquivo_vendas = st.file_uploader("Faça upload do relatório ABC de Vendas (.csv)", type=["csv"])
 
-st.divider()
+    st.divider()
 
-# --- EXECUÇÃO ---
-if st.button("🚀 Iniciar Processamento", type="primary"):
-    if not email_usuario or not senha_usuario or not arquivo_vendas:
-        st.error("Preencha as credenciais e faça o upload do relatório de vendas.")
-        st.stop()
+    if st.button("🚀 Iniciar Processamento", type="primary"):
+        if not email_usuario or not senha_usuario or not arquivo_vendas:
+            st.error("Preencha as credenciais e faça o upload do relatório de vendas.")
+            st.stop()
 
-    with st.spinner("Processando..."):
-        try:
-            # Passo 1: Link uMov.me
-            st.info("Buscando link da contagem...")
+        with st.spinner("Extraindo dados iniciais..."):
+            # Extração uMov.me
             linkumov = buscar_link_email(email_usuario, senha_usuario)
-            if linkumov:
-                st.success("Link capturado!")
-                extrair_produtos(linkumov) # Gera produtos_contagem.json
+            if linkumov: extrair_produtos(linkumov)
             
-            # Passo 2: Múltiplas Notas Fiscais
+            # Extração NF-e
             compras_totais = []
             for url in st.session_state.lista_nfe:
                 if url.strip():
-                    st.info(f"Extraindo dados da nota...")
                     dados_nota = extrair_dados_tabresult(url)
-                    if dados_nota:
-                        compras_totais.extend(dados_nota)
-            
+                    if dados_nota: compras_totais.extend(dados_nota)
             with open("produtos_compra.json", "w", encoding="utf-8") as f:
                 json.dump(compras_totais, f, ensure_ascii=False, indent=4)
 
-            # Passo 3: Relatório de Vendas
-            temp_path = "temp_vendas.csv"
-            with open(temp_path, "wb") as f:
-                f.write(arquivo_vendas.getbuffer())
-            convert_report(temp_path, 'resultado_vendas.json')
+            # Conversão Vendas
+            with open("temp_vendas.csv", "wb") as f: f.write(arquivo_vendas.getbuffer())
+            convert_report("temp_vendas.csv", 'resultado_vendas.json')
 
-            # Passo 4 e 5: Consolidação e Dedução
-            st.info("Consolidando dados e deduzindo vendas...")
-            if not os.path.exists("produtos_contagem.json"):
-                with open("produtos_contagem.json", "w") as f: json.dump([], f)
-            
-            consolidar_com_dicionario("produtos_contagem.json", "produtos_compra.json", "purchasedictionary.json", "estoque_adicionado_compra.json")
-            deduzir_vendas("estoque_adicionado_compra.json", "resultado_vendas.json", "salesdictionary.json", "estoque_final.json")
+            # --- VERIFICAÇÃO DE ITENS NÃO MAPEADOS ---
+            try:
+                with open("purchasedictionary.json", "r", encoding="utf-8") as f:
+                    p_dict = json.load(f)[cite: 16]
+            except FileNotFoundError:
+                p_dict = {}
 
-            # Passo 6: Conversão para CSV Final e Download
-            st.info("Gerando arquivo de importação...")
-            converter_estoque_para_csv("estoque_final.json")
-            
-            data_hoje = datetime.now().strftime('%Y%m%d')
-            arquivo_final = f'ITE_{data_hoje}.csv'
-            
-            if os.path.exists(arquivo_final):
-                with open(arquivo_final, "rb") as f:
-                    st.download_button("⬇️ Baixar Arquivo de Importação (CSV)", f, file_name=arquivo_final, mime="text/csv")
-                st.success("🎉 Processo finalizado!")
+            # Monta uma lista simples com todos os nomes que o dicionário já conhece
+            nomes_conhecidos = []
+            for v in p_dict.values():
+                for s in v.get("sinonimos", []):
+                    nomes_conhecidos.append(s["nome"])
+
+            # Filtra o que está na nota e não está no dicionário
+            nao_mapeados = [item for item in compras_totais if item["nome"] not in nomes_conhecidos]
+
+            if nao_mapeados:
+                st.session_state.itens_pendentes = nao_mapeados
+                st.session_state.fase = 'mapeamento'
             else:
-                st.error("Erro ao gerar o arquivo CSV final.")
+                st.session_state.fase = 'finalizacao'
+            
+            st.rerun()
 
-        except Exception as e:
-            st.error(f"Erro: {e}")
-        finally:
-            if os.path.exists("temp_vendas.csv"): os.remove("temp_vendas.csv")
+# ==========================================
+# FASE 1: RESOLUÇÃO DE ITENS DESCONHECIDOS
+# ==========================================
+elif st.session_state.fase == 'mapeamento':
+    if len(st.session_state.itens_pendentes) > 0:
+        item_atual = st.session_state.itens_pendentes[0]
+        
+        st.warning("⚠️ **Ação Necessária:** O item abaixo veio da nota fiscal, mas não possui relação no dicionário de compras.")
+        st.info(f"📦 Item da Nota: **{item_atual['nome']}**")
+
+        col_ignorar, col_relacionar = st.columns(2)
+        if col_ignorar.button("❌ Ignorar item", use_container_width=True):
+            remover_compra(item_atual['nome']) # Tira do fluxo
+            st.session_state.itens_pendentes.pop(0)
+            st.session_state.modo_relacionar = False
+            st.rerun()
+
+        if col_relacionar.button("🔗 Relacionar item", use_container_width=True):
+            st.session_state.modo_relacionar = True
+
+        if st.session_state.modo_relacionar:
+            st.divider()
+            st.markdown("### Procurar Item no Cadastro")
+            
+            # Carrega o CSV de itens cadastrados
+            try:
+                df_cadastrados = pd.read_csv("ItensCadastrados.csv", sep=";")
+                if 'Nome' not in df_cadastrados.columns or 'Unidade' not in df_cadastrados.columns:
+                    st.error("O arquivo 'ItensCadastrados.csv' precisa ter as colunas 'Nome' e 'Unidade'.")
+                    st.stop()
+                opcoes_itens = df_cadastrados['Nome'].dropna().tolist()
+            except FileNotFoundError:
+                st.error("Erro: Arquivo 'ItensCadastrados.csv' não encontrado na pasta raiz!")
+                st.stop()
+
+            # Campo de pesquisa listando itens do CSV
+            item_selecionado = st.selectbox("Pesquise e selecione o item correspondente do sistema:", opcoes_itens)
+            fator_conv = st.number_input(f"Fator de Conversão (Quantas unidades de '{item_selecionado}' equivalem a 1 '{item_atual['nome']}'?)", min_value=0.001, value=1.0)
+
+            st.markdown(f"> **Resumo da Relação:** Ao comprar 1x `{item_atual['nome']}`, o sistema adicionará **{fator_conv}x** de `{item_selecionado}`.")
+
+            # Pergunta final de certeza
+            if st.button("✅ Sim, tenho certeza. Salvar Relação", type="primary"):
+                unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
+                adicionar_ao_dicionario(item_selecionado, str(unidade_csv), item_atual['nome'], fator_conv)
+                st.success("Relação adicionada ao dicionário!")
+                
+                st.session_state.itens_pendentes.pop(0)
+                st.session_state.modo_relacionar = False
+                st.rerun()
+    else:
+        # Quando a lista de pendentes esvazia, avança para o final
+        st.session_state.fase = 'finalizacao'
+        st.rerun()
+
+# ==========================================
+# FASE 2: FINALIZAÇÃO E DOWNLOAD
+# ==========================================
+elif st.session_state.fase == 'finalizacao':
+    st.success("✔️ Todos os itens das notas fiscais foram mapeados ou ignorados.")
+    
+    with st.spinner("Concluindo consolidação e deduzindo vendas..."):
+        if not os.path.exists("produtos_contagem.json"):
+            with open("produtos_contagem.json", "w") as f: json.dump([], f)
+        
+        # Como limpamos os itens ignorados e mapeamos os restantes, o addpurchase.py rodará sem gerar novos erros[cite: 15, 16]
+        consolidar_com_dicionario("produtos_contagem.json", "produtos_compra.json", "purchasedictionary.json", "estoque_adicionado_compra.json")[cite: 16]
+        deduzir_vendas("estoque_adicionado_compra.json", "resultado_vendas.json", "salesdictionary.json", "estoque_final.json")[cite: 16]
+        converter_estoque_para_csv("estoque_final.json")[cite: 16]
+        
+        data_hoje = datetime.now().strftime('%Y%m%d')
+        arquivo_final = f'ITE_{data_hoje}.csv'
+        
+        if os.path.exists(arquivo_final):
+            with open(arquivo_final, "rb") as f:
+                st.download_button("⬇️ Baixar Arquivo de Importação (CSV)", f, file_name=arquivo_final, mime="text/csv")[cite: 16]
+            
+        if os.path.exists("temp_vendas.csv"): os.remove("temp_vendas.csv")
+    
+    st.divider()
+    if st.button("🔄 Iniciar Novo Processamento"):
+        for key in list(st.session_state.keys()):
+            del st.session_state[key]
+        st.rerun()

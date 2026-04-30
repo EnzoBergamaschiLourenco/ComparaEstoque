@@ -7,3 +7,4 @@ sensitive.py
 *.pyo
 *.csv
 *.csv
+!ItensCadastrados.csv
