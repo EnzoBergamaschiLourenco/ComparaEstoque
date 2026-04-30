@@ -29,12 +29,12 @@ def adicionar_ao_dicionario(nome_cadastrado, unidade, nome_nota, fator):
     arquivo_dict = "purchasedictionary.json"
     try:
         with open(arquivo_dict, "r", encoding="utf-8") as f:
-            dicionario = json.load(f)[cite: 15, 17]
+            dicionario = json.load(f)
     except FileNotFoundError:
         dicionario = {}
 
     if nome_cadastrado not in dicionario:
-        dicionario[nome_cadastrado] = {"unidade": unidade, "sinonimos": []}[cite: 17]
+        dicionario[nome_cadastrado] = {"unidade": unidade, "sinonimos": []}
 
     # Verifica se o sinônimo já existe para evitar duplicatas
     sinonimos = dicionario[nome_cadastrado]["sinonimos"]
@@ -42,11 +42,11 @@ def adicionar_ao_dicionario(nome_cadastrado, unidade, nome_nota, fator):
         sinonimos.append({
             "nome": nome_nota,
             "quantidade": fator,
-            "unidade": "UN" # Padrão para a nota[cite: 17]
+            "unidade": "UN" # Padrão para a nota
         })
 
     with open(arquivo_dict, "w", encoding="utf-8") as f:
-        json.dump(dicionario, f, ensure_ascii=False, indent=4)[cite: 15]
+        json.dump(dicionario, f, ensure_ascii=False, indent=4)
 
 # 1. Função para buscar link via e-mail sem sensitive.py
 def buscar_link_email(email_login, password):
@@ -135,7 +135,7 @@ if st.session_state.fase == 'inicio':
             # --- VERIFICAÇÃO DE ITENS NÃO MAPEADOS ---
             try:
                 with open("purchasedictionary.json", "r", encoding="utf-8") as f:
-                    p_dict = json.load(f)[cite: 16]
+                    p_dict = json.load(f)
             except FileNotFoundError:
                 p_dict = {}
 
@@ -221,17 +221,17 @@ elif st.session_state.fase == 'finalizacao':
         if not os.path.exists("produtos_contagem.json"):
             with open("produtos_contagem.json", "w") as f: json.dump([], f)
         
-        # Como limpamos os itens ignorados e mapeamos os restantes, o addpurchase.py rodará sem gerar novos erros[cite: 15, 16]
-        consolidar_com_dicionario("produtos_contagem.json", "produtos_compra.json", "purchasedictionary.json", "estoque_adicionado_compra.json")[cite: 16]
-        deduzir_vendas("estoque_adicionado_compra.json", "resultado_vendas.json", "salesdictionary.json", "estoque_final.json")[cite: 16]
-        converter_estoque_para_csv("estoque_final.json")[cite: 16]
+        # Como limpamos os itens ignorados e mapeamos os restantes, o addpurchase.py rodará sem gerar novos erros
+        consolidar_com_dicionario("produtos_contagem.json", "produtos_compra.json", "purchasedictionary.json", "estoque_adicionado_compra.json")
+        deduzir_vendas("estoque_adicionado_compra.json", "resultado_vendas.json", "salesdictionary.json", "estoque_final.json")
+        converter_estoque_para_csv("estoque_final.json")
         
         data_hoje = datetime.now().strftime('%Y%m%d')
         arquivo_final = f'ITE_{data_hoje}.csv'
         
         if os.path.exists(arquivo_final):
             with open(arquivo_final, "rb") as f:
-                st.download_button("⬇️ Baixar Arquivo de Importação (CSV)", f, file_name=arquivo_final, mime="text/csv")[cite: 16]
+                st.download_button("⬇️ Baixar Arquivo de Importação (CSV)", f, file_name=arquivo_final, mime="text/csv")
             
         if os.path.exists("temp_vendas.csv"): os.remove("temp_vendas.csv")
     
