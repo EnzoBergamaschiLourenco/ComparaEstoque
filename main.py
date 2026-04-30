@@ -4,6 +4,7 @@ import email
 import re
 import os
 import json
+from datetime import datetime # Necessário para identificar o nome do arquivo CSV gerado
 
 # Importações dos seus módulos existentes
 from umovextractor import extrair_produtos
@@ -11,8 +12,9 @@ from nfextractor import extrair_dados_tabresult
 from report_converter import convert_report
 from addpurchase import consolidar_com_dicionario
 from salesdeducer import processar_estoque as deduzir_vendas
+from importconverter import converter_estoque_para_csv # Adicionado
 
-# 1. Função adaptada para receber credenciais do Streamlit em vez do sensitive.py
+# 1. Função adaptada para receber credenciais do Streamlit
 def buscar_link_email(email_login, password):
     try:
         mail = imaplib.IMAP4_SSL("email-ssl.com.br", 993)
@@ -79,7 +81,7 @@ if st.button("🚀 Iniciar Processamento", type="primary"):
     
     # Validações Iniciais
     if not email_usuario or not senha_usuario:
-        st.error("Por favor, preencha o E-mail e Senha para buscar o link da contagem.")
+        st.error("Por favor, preencha o E-mail e Senha.")
         st.stop()
         
     if not arquivo_vendas:
@@ -103,7 +105,6 @@ if st.button("🚀 Iniciar Processamento", type="primary"):
                 extrair_dados_tabresult(link_nfce)
             else:
                 st.warning("Nenhum link de NFC-e preenchido. As compras não serão somadas.")
-                # Cria um JSON vazio caso não haja NFC-e para não quebrar a consolidação
                 with open("produtos_compra.json", "w") as f: json.dump([], f)
 
             # Passo 3: Salvar o CSV temporário e Converter
@@ -113,10 +114,6 @@ if st.button("🚀 Iniciar Processamento", type="primary"):
                 f.write(arquivo_vendas.getbuffer())
                 
             convert_report(temp_vendas_path, 'resultado_vendas.json')
-
-            # Garantir que produtos_contagem.json exista (caso a busca de e-mail falhe)
-            if not os.path.exists("produtos_contagem.json"):
-                with open("produtos_contagem.json", "w") as f: json.dump([], f)
 
             # Passo 4: Consolidar com Dicionário
             st.info("Aplicando compras ao estoque base...")
@@ -135,20 +132,30 @@ if st.button("🚀 Iniciar Processamento", type="primary"):
                 "salesdictionary.json",
                 "estoque_final.json"
             )
+
+            # Passo 6: Gerar CSV de Importação Final
+            st.info("Gerando arquivo CSV para importação...")
+            converter_estoque_para_csv("estoque_final.json")
             
-            st.success("🎉 Fluxo concluído com sucesso!")
+            # Determinar o nome do arquivo gerado (ITE_AAAAMMDD.csv)[cite: 19]
+            data_hoje = datetime.now().strftime('%Y%m%d')
+            arquivo_final_csv = f'ITE_{data_hoje}.csv'
             
-            # Botão de Download do Arquivo Final
-            if os.path.exists("estoque_final.json"):
-                with open("estoque_final.json", "rb") as f:
-                    json_bytes = f.read()
+            st.success("🎉 Processamento concluído com sucesso!")
+            
+            # Botão de Download do Arquivo CSV Final
+            if os.path.exists(arquivo_final_csv):
+                with open(arquivo_final_csv, "rb") as f:
+                    csv_bytes = f.read()
                     
                 st.download_button(
-                    label="⬇️ Baixar Estoque Final (JSON)",
-                    data=json_bytes,
-                    file_name="estoque_final.json",
-                    mime="application/json"
+                    label="⬇️ Baixar Arquivo de Importação (CSV)",
+                    data=csv_bytes,
+                    file_name=arquivo_final_csv,
+                    mime="text/csv"
                 )
+            else:
+                st.error("Erro: O arquivo CSV final não foi gerado.")
 
         except Exception as e:
             st.error(f"Ocorreu um erro inesperado: {e}")
