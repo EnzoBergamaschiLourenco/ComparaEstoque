@@ -16,6 +16,11 @@ from addpurchase import consolidar_com_dicionario
 from salesdeducer import processar_estoque as deduzir_vendas
 from importconverter import converter_estoque_para_csv
 
+# --- CONFIGURAÇÃO GITHUB (Pegando dos Secrets) ---
+GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
+REPO_NAME = st.secrets.get("REPO_NAME", "EnzoBergamaschiLourenco/ComparaEstoque")
+FILE_PATH_IN_REPO = "purchasedictionary.json"
+
 #-- ENVIAR DICIONARIO DE COMPRAS ATUALIZADO--
 def commit_to_github(file_path):
     """Faz o push do arquivo JSON atualizado para o GitHub com tratamento de conflito."""
@@ -128,6 +133,7 @@ if 'fase' not in st.session_state: st.session_state.fase = 'inicio'
 if 'lista_nfe' not in st.session_state: st.session_state.lista_nfe = [""]
 if 'itens_pendentes' not in st.session_state: st.session_state.itens_pendentes = []
 if 'modo_relacionar' not in st.session_state: st.session_state.modo_relacionar = False
+if 'github_sincronizado' not in st.session_state: st.session_state.github_sincronizado = False
 
 st.set_page_config(page_title="Automação de Estoque", layout="centered")
 st.title("📦 Sistema de Automação de Estoque")
