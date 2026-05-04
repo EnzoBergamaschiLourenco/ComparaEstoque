@@ -4,8 +4,9 @@ import email
 import re
 import os
 import json
-import pandas as pd # Necessário para ler o CSV de itens cadastrados
+import pandas as pd
 from datetime import datetime
+from github import Github, GithubException
 
 # Importações dos módulos existentes
 from umovextractor import extrair_produtos
@@ -15,9 +16,46 @@ from addpurchase import consolidar_com_dicionario
 from salesdeducer import processar_estoque as deduzir_vendas
 from importconverter import converter_estoque_para_csv
 
+# --- CONFIGURAÇÃO GITHUB ---
+GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "seu_token_aqui")
+REPO_NAME = st.secrets.get("REPO_NAME", "seu_usuario/seu_repositorio")
+FILE_PATH_IN_REPO = "purchasedictionary.json"
+
+def commit_to_github(file_path):
+    """Faz o push do arquivo JSON atualizado para o GitHub."""
+    try:
+        g = Github(GITHUB_TOKEN)
+        repo = g.get_repo(REPO_NAME)
+        
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        try:
+            # Tenta encontrar o arquivo existente para atualizar
+            contents = repo.get_contents(FILE_PATH_IN_REPO)
+            repo.update_file(
+                path=FILE_PATH_IN_REPO,
+                message=f"Update: Dicionário atualizado em {datetime.now().strftime('%d/%m/%Y %H:%M')}",
+                content=content,
+                sha=contents.sha
+            )
+            st.toast("✅ Dicionário sincronizado com GitHub!")
+        except GithubException as e:
+            # Se o arquivo não existir, cria um novo
+            if e.status == 404:
+                repo.create_file(
+                    path=FILE_PATH_IN_REPO,
+                    message="Initial: Criação do dicionário de compras",
+                    content=content
+                )
+                st.toast("✅ Dicionário criado no GitHub!")
+            else:
+                st.error(f"Erro GitHub: {e}")
+    except Exception as e:
+        st.error(f"Erro ao conectar com GitHub: {e}")
+
 # --- FUNÇÕES DE AUXÍLIO PARA DICIONÁRIO E COMPRAS ---
 def remover_compra(nome_nota):
-    """Remove um item ignorado do JSON de compras para que ele não trave a consolidação."""
     with open("produtos_compra.json", "r", encoding="utf-8") as f:
         compras = json.load(f)
     compras = [c for c in compras if c['nome'] != nome_nota]
@@ -25,7 +63,6 @@ def remover_compra(nome_nota):
         json.dump(compras, f, ensure_ascii=False, indent=4)
 
 def adicionar_ao_dicionario(nome_cadastrado, unidade, nome_nota, fator):
-    """Atualiza e exporta o purchasedictionary.json com a nova relação e unidade do CSV."""
     arquivo_dict = "purchasedictionary.json"
     try:
         with open(arquivo_dict, "r", encoding="utf-8") as f:
@@ -36,19 +73,18 @@ def adicionar_ao_dicionario(nome_cadastrado, unidade, nome_nota, fator):
     if nome_cadastrado not in dicionario:
         dicionario[nome_cadastrado] = {"unidade": unidade, "sinonimos": []}
 
-    # Verifica se o sinônimo já existe para evitar duplicatas
     sinonimos = dicionario[nome_cadastrado]["sinonimos"]
     if not any(s["nome"] == nome_nota for s in sinonimos):
         sinonimos.append({
             "nome": nome_nota,
             "quantidade": fator,
-            "unidade": "UN" # Padrão para a nota
+            "unidade": "UN"
         })
 
     with open(arquivo_dict, "w", encoding="utf-8") as f:
         json.dump(dicionario, f, ensure_ascii=False, indent=4)
 
-# 1. Função para buscar link via e-mail sem sensitive.py
+# 1. Função para buscar link via e-mail
 def buscar_link_email(email_login, password):
     try:
         mail = imaplib.IMAP4_SSL("email-ssl.com.br", 993)
@@ -56,14 +92,10 @@ def buscar_link_email(email_login, password):
         mail.select("inbox")
         status, messages = mail.search(None, '(FROM "noreply@umov.me")')
         email_ids = messages[0].split()
-
-        if not email_ids:
-            return None
-
+        if not email_ids: return None
         latest_email_id = email_ids[-1]
         status, msg_data = mail.fetch(latest_email_id, "(RFC822)")
         msg = email.message_from_bytes(msg_data[0][1])
-
         body = ""
         if msg.is_multipart():
             for part in msg.walk():
@@ -71,7 +103,6 @@ def buscar_link_email(email_login, password):
                     body = part.get_payload(decode=True).decode()
         else:
             body = msg.get_payload(decode=True).decode()
-
         links = re.findall(r'https://[^\s"]+', body)
         return links[0] if links else None
     except Exception as e:
@@ -83,6 +114,7 @@ if 'fase' not in st.session_state: st.session_state.fase = 'inicio'
 if 'lista_nfe' not in st.session_state: st.session_state.lista_nfe = [""]
 if 'itens_pendentes' not in st.session_state: st.session_state.itens_pendentes = []
 if 'modo_relacionar' not in st.session_state: st.session_state.modo_relacionar = False
+if 'github_sincronizado' not in st.session_state: st.session_state.github_sincronizado = False
 
 st.set_page_config(page_title="Automação de Estoque", layout="centered")
 st.title("📦 Sistema de Automação de Estoque")
@@ -115,11 +147,9 @@ if st.session_state.fase == 'inicio':
             st.stop()
 
         with st.spinner("Extraindo dados iniciais..."):
-            # Extração uMov.me
             linkumov = buscar_link_email(email_usuario, senha_usuario)
             if linkumov: extrair_produtos(linkumov)
             
-            # Extração NF-e
             compras_totais = []
             for url in st.session_state.lista_nfe:
                 if url.strip():
@@ -128,11 +158,9 @@ if st.session_state.fase == 'inicio':
             with open("produtos_compra.json", "w", encoding="utf-8") as f:
                 json.dump(compras_totais, f, ensure_ascii=False, indent=4)
 
-            # Conversão Vendas
             with open("temp_vendas.csv", "wb") as f: f.write(arquivo_vendas.getbuffer())
             convert_report("temp_vendas.csv", 'resultado_vendas.json')
 
-            # --- VERIFICAÇÃO DE ITENS NÃO MAPEADOS ---
             try:
                 with open("purchasedictionary.json", "r", encoding="utf-8") as f:
                     p_dict = json.load(f)
@@ -160,50 +188,28 @@ if st.session_state.fase == 'inicio':
 elif st.session_state.fase == 'mapeamento':
     if len(st.session_state.itens_pendentes) > 0:
         item_atual = st.session_state.itens_pendentes[0]
-        
-        st.warning("⚠️ **Ação Necessária:** O item abaixo veio da nota fiscal, mas não possui relação no dicionário de compras.")
+        st.warning("⚠️ Item não mapeado.")
         st.info(f"📦 Item da Nota: **{item_atual['nome']}**")
 
         col_ignorar, col_relacionar = st.columns(2)
-        if col_ignorar.button("❌ Ignorar item", use_container_width=True):
+        if col_ignorar.button("❌ Ignorar item"):
             remover_compra(item_atual['nome'])
             st.session_state.itens_pendentes.pop(0)
-            st.session_state.modo_relacionar = False
             st.rerun()
 
-        if col_relacionar.button("🔗 Relacionar item", use_container_width=True):
+        if col_relacionar.button("🔗 Relacionar item"):
             st.session_state.modo_relacionar = True
 
         if st.session_state.modo_relacionar:
-            st.divider()
-            st.markdown("### Procurar Item no Cadastro")
-            
-            try:
-                df_cadastrados = pd.read_csv("ItensCadastrados.csv", sep=";")
-                if 'Nome' not in df_cadastrados.columns or 'Unidade' not in df_cadastrados.columns:
-                    st.error("O arquivo 'ItensCadastrados.csv' precisa ter as colunas 'Nome' e 'Unidade'.")
-                    st.stop()
-                opcoes_itens = df_cadastrados['Nome'].dropna().tolist()
-            except FileNotFoundError:
-                st.error("Erro: Arquivo 'ItensCadastrados.csv' não encontrado!")
-                st.stop()
-
-            item_selecionado = st.selectbox("Pesquise e selecione o item correspondente do sistema:", opcoes_itens)
-            
+            df_cadastrados = pd.read_csv("ItensCadastrados.csv", sep=";")
+            opcoes_itens = df_cadastrados['Nome'].dropna().tolist()
+            item_selecionado = st.selectbox("Selecione o item do sistema:", opcoes_itens)
             unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
 
-            fator_conv = st.number_input(
-                f"Fator de Conversão (Quantos(as) '{unidade_csv}' de '{item_selecionado}' equivalem a 1 '{item_atual['nome']}'?)", 
-                min_value=0.001, 
-                value=1.0
-            )
+            fator_conv = st.number_input(f"Fator (1 NF = ? {unidade_csv})", min_value=0.001, value=1.0)
 
-            st.markdown(f"> **Resumo da Relação:** Ao comprar 1x `{item_atual['nome']}`, o sistema adicionará **{fator_conv}x {unidade_csv}** de `{item_selecionado}`.")
-
-            if st.button("✅ Sim, tenho certeza. Salvar Relação", type="primary"):
+            if st.button("✅ Salvar Relação"):
                 adicionar_ao_dicionario(item_selecionado, str(unidade_csv), item_atual['nome'], fator_conv)
-                st.success("Relação adicionada ao dicionário!")
-                
                 st.session_state.itens_pendentes.pop(0)
                 st.session_state.modo_relacionar = False
                 st.rerun()
@@ -212,12 +218,12 @@ elif st.session_state.fase == 'mapeamento':
         st.rerun()
 
 # ==========================================
-# FASE 2: FINALIZAÇÃO E DOWNLOAD
+# FASE 2: FINALIZAÇÃO E SYNC GITHUB
 # ==========================================
 elif st.session_state.fase == 'finalizacao':
-    st.success("✔️ Todos os itens das notas fiscais foram mapeados ou ignorados.")
+    st.success("✔️ Mapeamento concluído.")
     
-    with st.spinner("Concluindo consolidação e deduzindo vendas..."):
+    with st.spinner("Consolidando estoque e sincronizando..."):
         if not os.path.exists("produtos_contagem.json"):
             with open("produtos_contagem.json", "w") as f: json.dump([], f)
         
@@ -225,38 +231,28 @@ elif st.session_state.fase == 'finalizacao':
         deduzir_vendas("estoque_adicionado_compra.json", "resultado_vendas.json", "salesdictionary.json", "estoque_final.json")
         converter_estoque_para_csv("estoque_final.json")
         
+        # --- NOVO: COMMIT AUTOMÁTICO PARA O GITHUB ---
+        if not st.session_state.github_sincronizado:
+            commit_to_github("purchasedictionary.json")
+            st.session_state.github_sincronizado = True
+
         data_hoje = datetime.now().strftime('%Y%m%d')
         arquivo_final = f'ITE_{data_hoje}.csv'
         arquivo_dict = "purchasedictionary.json"
         
         col_down1, col_down2 = st.columns(2)
-        
         with col_down1:
             if os.path.exists(arquivo_final):
                 with open(arquivo_final, "rb") as f:
-                    st.download_button(
-                        label="⬇️ Baixar Importação (CSV)", 
-                        data=f, 
-                        file_name=arquivo_final, 
-                        mime="text/csv",
-                        use_container_width=True
-                    )
-        
+                    st.download_button("⬇️ Baixar Importação (CSV)", f, file_name=arquivo_final, mime="text/csv", use_container_width=True)
         with col_down2:
             if os.path.exists(arquivo_dict):
                 with open(arquivo_dict, "rb") as f:
-                    st.download_button(
-                        label="⬇️ Baixar Dicionário Atualizado (JSON)",
-                        data=f,
-                        file_name="purchasedictionary.json",
-                        mime="application/json",
-                        use_container_width=True
-                    )
+                    st.download_button("⬇️ Baixar Dicionário (JSON)", f, file_name="purchasedictionary.json", mime="application/json", use_container_width=True)
             
         if os.path.exists("temp_vendas.csv"): os.remove("temp_vendas.csv")
     
     st.divider()
     if st.button("🔄 Iniciar Novo Processamento"):
-        for key in list(st.session_state.keys()):
-            del st.session_state[key]
+        for key in list(st.session_state.keys()): del st.session_state[key]
         st.rerun()
