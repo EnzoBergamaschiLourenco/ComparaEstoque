@@ -13,5 +13,15 @@
                 "unidade": "L"
             }
         ]
+    },
+    "CUPUAÇU 1/2 CP210": {
+        "unidade": "UN",
+        "sinonimos": [
+            {
+                "nome": "*K* BD RET RIOPLASTIC C4DIV 12un 1200ML (Código: 941248 )",
+                "quantidade": 1.0,
+                "unidade": "UN"
+            }
+        ]
     }
 }
