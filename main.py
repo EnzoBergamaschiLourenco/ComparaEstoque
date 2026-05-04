@@ -238,7 +238,7 @@ elif st.session_state.fase == 'mapeamento':
             unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
 
             fator_conv = st.number_input(
-                f"Fator de Conversão (Quantos(as) '{unidade_csv}' de '{item_selecionado}' equivalem a 1 '{item_atual['nome']}'?)", 
+                f"Fator de Conversão (Quantos(as) '{unidade_csv}' de '{item_selecionado}' equivalem a 1 '{item_atual['unidade']}' '{item_atual['nome']}'?)", 
                 min_value=0.001, 
                 value=1.0
             )
