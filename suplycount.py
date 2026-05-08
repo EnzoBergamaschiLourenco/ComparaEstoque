@@ -180,7 +180,7 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
         dados_email = dados_email[0] if isinstance(dados_email[0], list) else []
 
     # 2. Obter dados do CSV
-    dados_csv = extrair_dados_csv(caminho_csv)
+    dados_csv = processar_export_csv(caminho_csv)
     
     if isinstance(dados_csv, tuple):
         dados_csv = dados_csv[0] if isinstance(dados_csv[0], list) else []
