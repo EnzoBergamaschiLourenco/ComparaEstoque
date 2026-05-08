@@ -171,71 +171,82 @@ if st.session_state.fase == 'inicio':
     if st.button("🚀 Iniciar Processamento", use_container_width=True):
         sucesso_contagem = False
         
-        # Validação básica
-        if not arquivo_vendas:
-            st.error("O relatório de vendas é obrigatório.")
-            st.stop()
-
-        # --- ETAPA 1: Obter a Contagem (Prioridade para o Arquivo CSV) ---
+        # 1. Obter a Contagem (CSV ou Email)
         if arquivo_csv is not None:
-            with st.status("Lendo arquivo de itens...") as status:
+            with st.status("Processando arquivo enviado...") as status:
                 with open("temp_cadastro.csv", "wb") as f:
                     f.write(arquivo_csv.getbuffer())
                 
                 sucesso, msg = processar_export_csv("temp_cadastro.csv", "produtos_contagem.json")
                 if sucesso:
-                    st.success("Contagem extraída do CSV!")
+                    status.update(label="✅ CSV processado!", state="complete")
                     sucesso_contagem = True
                 else:
                     st.error(msg)
         
         elif email_user and senha_user:
-            with st.status("Buscando link no e-mail...") as status:
+            with st.status("Iniciando busca no e-mail...") as status:
+                # Passo A: Buscar o Link
+                status.write("🔍 Conectando ao servidor IMAP...")
                 link = buscar_link(email_user, senha_user)
-                if link and extrair_produtos(link):
-                    if convert_report("report.html", "produtos_contagem.json"):
-                        st.success("Contagem extraída do e-mail!")
-                        sucesso_contagem = True
+                
+                if not link:
+                    st.error("❌ Nenhum e-mail da uMov.me encontrado ou falha no login.")
                 else:
-                    st.error("Falha ao localizar ou extrair dados do e-mail.")
+                    # Passo B: Extrair os produtos do link
+                    status.write("🌐 Acessando link da contagem...")
+                    if extrair_produtos(link):
+                        
+                        # Passo C: Converter HTML para JSON
+                        status.write("⚙️ Convertendo dados para o sistema...")
+                        if convert_report("report.html", "produtos_contagem.json"):
+                            status.update(label="✅ Dados do e-mail extraídos!", state="complete")
+                            sucesso_contagem = True
+                        else:
+                            st.error("❌ Erro ao converter o relatório HTML.")
+                    else:
+                        st.error("❌ Falha ao extrair produtos do link.")
         else:
-            st.warning("Forneça o arquivo 'Cadastro_Itens.csv' ou as credenciais de e-mail.")
+            st.warning("⚠️ Forneça o arquivo CSV ou as credenciais de e-mail.")
 
-        # --- ETAPA 2: Processar Compras e Vendas (Apenas se a Etapa 1 funcionou) ---
+        # 2. Se a contagem foi obtida, processar NF-es e Vendas
         if sucesso_contagem:
             with st.status("Processando NF-es e Vendas...") as status:
+                if not arquivo_vendas:
+                    st.error("❌ O arquivo de vendas é obrigatório.")
+                    st.stop()
+
                 # Extração NF-e
                 compras_totais = []
                 for url in st.session_state.lista_nfe:
                     if url.strip():
+                        status.write(f"📄 Lendo Nota: {url[:30]}...")
                         dados_nota = extrair_dados_tabresult(url)
-                        if dados_nota: 
-                            compras_totais.extend(dados_nota)
+                        if dados_nota: compras_totais.extend(dados_nota)
                 
                 with open("produtos_compra.json", "w", encoding="utf-8") as f:
                     json.dump(compras_totais, f, ensure_ascii=False, indent=4)
 
                 # Processamento Vendas
+                status.write("📊 Analisando relatório de vendas...")
                 with open("temp_vendas.csv", "wb") as f: 
                     f.write(arquivo_vendas.getbuffer())
-                # Note: convert_report deve ser capaz de lidar com o CSV de vendas aqui
                 convert_report("temp_vendas.csv", 'resultado_vendas.json')
 
-                # --- ETAPA 3: Verificar Mapeamento ---
+                # Verificação de Mapeamento
+                status.write("🔍 Verificando dicionário de itens...")
                 try:
                     with open("purchasedictionary.json", "r", encoding="utf-8") as f:
                         p_dict = json.load(f)
                 except FileNotFoundError:
                     p_dict = {}
 
-                # Achatando nomes conhecidos no dicionário para comparação
                 nomes_conhecidos = []
                 for v in p_dict.values():
                     if "sinonimos" in v:
                         for s in v["sinonimos"]:
                             nomes_conhecidos.append(s["nome"])
 
-                # Itens da nota que não existem no dicionário
                 nao_mapeados = [item for item in compras_totais if item["nome"] not in nomes_conhecidos]
 
                 if nao_mapeados:
@@ -244,6 +255,7 @@ if st.session_state.fase == 'inicio':
                 else:
                     st.session_state.fase = 'finalizacao'
                 
+                status.update(label="🚀 Tudo pronto! Mudando de fase...", state="complete")
                 st.rerun()
 # ==========================================
 # FASE 1: RESOLUÇÃO DE ITENS DESCONHECIDOS
