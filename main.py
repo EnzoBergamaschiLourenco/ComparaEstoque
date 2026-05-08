@@ -4,9 +4,10 @@ import email
 import re
 import os
 import json
-import pandas as pd # Necessário para ler o CSV de itens cadastrados
+import pandas as pd
 from datetime import datetime
-from github import Github, GithubException # Nova dependência
+from github import Github, GithubException
+from export_reader import processar_export_csv
 
 # Importações dos módulos existentes
 from umovextractor import extrair_produtos
@@ -143,9 +144,10 @@ st.title("📦 Sistema de Automação de Estoque")
 # ==========================================
 if st.session_state.fase == 'inicio':
     st.header("1. Acesso à Contagem (uMov.me)")
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns([1, 1, 1.5])
     with col1: email_usuario = st.text_input("E-mail IMAP", placeholder="usuario@dominio.com")
     with col2: senha_usuario = st.text_input("Senha IMAP", type="password")
+    with col3: arquivo_exportado = st.file_uploader("Upload Cadastro_Itens.csv", type=["csv"])
 
     st.header("2. Notas Fiscais de Compra (NFC-e)")
     for i, url in enumerate(st.session_state.lista_nfe):
@@ -161,8 +163,13 @@ if st.session_state.fase == 'inicio':
     st.divider()
 
     if st.button("🚀 Iniciar Processamento", type="primary"):
-        if not email_usuario or not senha_usuario or not arquivo_vendas:
-            st.error("Preencha as credenciais e faça o upload do relatório de vendas.")
+        if not email_usuario or not senha_usuario or not arquivo_exportado:
+            st.error("Por favor, preencha o E-mail, Senha e suba o arquivo CSV para continuar.")
+        else:
+            # Salvando arquivo temporariamente para processar
+            with open("temp_cadastro.csv", "wb") as f:
+                f.write(arquivo_exportado.getbuffer())
+            sucesso, mensagem = processar_export_csv("temp_cadastro.csv")
             st.stop()
 
         with st.spinner("Extraindo dados iniciais..."):
