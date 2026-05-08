@@ -176,7 +176,8 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     # Forçamos a conversão para lista para evitar o TypeError de concatenação
     lista_unificada = list(dados_email if isinstance(dados_email, list) else []) + \
                       list(dados_csv if isinstance(dados_csv, list) else [])
-
+    print("EMAIL:", dados_email[:3])
+    print("CSV:", dados_csv[:3])
     for item in lista_unificada:
         if isinstance(item, dict) and 'nome' in item:
             nome = item['nome']
