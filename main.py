@@ -7,7 +7,6 @@ import json
 import pandas as pd
 from datetime import datetime
 from github import Github, GithubException
-from export_reader import processar_export_csv
 
 # Importações dos módulos existentes
 from suplycount import buscar_link, extrair_produtos, processar_export_csv, obter_contagem_consolidada
@@ -15,6 +14,7 @@ from nfextractor import extrair_dados_tabresult
 from reportconverter import convert_report
 from addpurchase import consolidar_com_dicionario
 from salesdeducer import processar_estoque as deduzir_vendas
+from importconverter import converter_estoque_para_csv
 
 # --- CONFIGURAÇÃO GITHUB (Pegando dos Secrets) ---
 GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
