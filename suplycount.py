@@ -132,42 +132,29 @@ def extrair_produtos(url):
     except Exception as e:
         print("Erro detalhado:", e)
 
-def processar_export_csv(caminho_csv, caminho_json="produtos_contagem.json"):
-    """
-    Lê o Cadastro_Itens.csv e converte para produtos_contagem.json
-    """
+def processar_export_csv(caminho_csv):
+    """Lê o Cadastro_Itens.csv e retorna a lista de produtos"""
     try:
-        # Lendo o CSV: sep=';', pula a primeira linha (metadados)
         df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='utf-8')
-
-        # Filtrar apenas itens que são de 'Contagem' (opcional, dependendo da sua regra)
-        # Se quiser todos os itens, basta comentar a linha abaixo
-        df = df[df['ID CATEGORIA DE ITENS'] == 'Contagem']
-
-        # Mapeando colunas para o formato do dicionário
-        # nome -> DESCRIÇÃO ITEM, unidade -> Unidade de medida, quantidade -> QuantidadeContagem
-        lista_produtos = []
-        for _, row in df.iterrows():
-            produto = {
+        df_contagem = df[df['ID CATEGORIA DE ITENS'] == 'Contagem']
+        
+        produtos = []
+        for _, row in df_contagem.iterrows():
+            produtos.append({
                 "nome": str(row['DESCRIÇÃO ITEM']),
                 "unidade": str(row['Unidade de medida']),
                 "quantidade": float(row['QuantidadeContagem']) if pd.notnull(row['QuantidadeContagem']) else 0.0
-            }
-            lista_produtos.append(produto)
-
-        # Salvar em JSON
-        with open(caminho_json, 'w', encoding='utf-8') as f:
-            json.dump(lista_produtos, f, indent=4, ensure_ascii=False)
-
-        return True, f"Sucesso! {len(lista_produtos)} itens processados."
-
+            })
+        return produtos # Retorna uma lista
     except Exception as e:
-        return False, f"Erro ao processar CSV: {str(e)}"
-    
+        print(f"Erro ao ler CSV: {e}")
+        return []
+
+# --- FUNÇÃO DE CONSOLIDAÇÃO CORRIGIDA ---
+
 def obter_contagem_consolidada(email, senha, caminho_csv):
     """
-    Novo Fluxo: Obtém dados do e-mail e do CSV e soma as quantidades
-    de itens com o mesmo nome.
+    Soma as quantidades do E-mail e do CSV.
     """
     total_estoque = {}
 
@@ -175,38 +162,43 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     link = buscar_link(email, senha)
     dados_email = extrair_produtos(link) if link else []
     
-    # Segurança: Se a função retornar uma tupla (ex: sucesso, erro), pega só a lista
+    # Proteção: se extrair_produtos retornar (lista, status) ou similar
     if isinstance(dados_email, tuple):
-        dados_email = dados_email[0] if isinstance(dados_email[0], list) else []
+        dados_email = dados_email[0] if (len(dados_email) > 0 and isinstance(dados_email[0], list)) else []
 
-    # 2. Obter dados do CSV
+    # 2. Obter dados do CSV (Usando o nome correto da função que você já tem)
     dados_csv = processar_export_csv(caminho_csv)
     
     if isinstance(dados_csv, tuple):
-        dados_csv = dados_csv[0] if isinstance(dados_csv[0], list) else []
+        dados_csv = dados_csv[0] if (len(dados_csv) > 0 and isinstance(dados_csv[0], list)) else []
 
-    # Garante que ambos são listas para evitar o TypeError
-    lista_unificada = list(dados_email or []) + list(dados_csv or [])
+    # 3. Unificar e Somar
+    # Forçamos a conversão para lista para evitar o TypeError de concatenação
+    lista_unificada = list(dados_email if isinstance(dados_email, list) else []) + \
+                      list(dados_csv if isinstance(dados_csv, list) else [])
 
-    # 3. Consolidar e Somar
     for item in lista_unificada:
-        # Verifica se o item é um dicionário válido
         if isinstance(item, dict) and 'nome' in item:
             nome = item['nome']
-            quantidade = item.get('quantidade', 0)
+            # Garante que quantidade seja float para poder somar
+            try:
+                qtd = float(item.get('quantidade', 0))
+            except:
+                qtd = 0.0
             unidade = item.get('unidade', 'UN')
 
             if nome in total_estoque:
-                total_estoque[nome]['quantidade'] += quantidade
+                total_estoque[nome]['quantidade'] += qtd
             else:
                 total_estoque[nome] = {
                     "nome": nome,
                     "unidade": unidade,
-                    "quantidade": quantidade
+                    "quantidade": qtd
                 }
 
     resultado_final = list(total_estoque.values())
     
+    # Salva o arquivo que o sistema espera
     with open("produtos_contagem.json", "w", encoding="utf-8") as f:
         json.dump(resultado_final, f, indent=4, ensure_ascii=False)
         
