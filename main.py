@@ -239,7 +239,7 @@ elif st.session_state.fase == 'mapeamento':
                 st.error("Erro: Arquivo 'ItensCadastrados.csv' não encontrado!")
                 st.stop()
 
-            item_selecionado = st.selectbox("Pesquise e selecione o item correspondente do sistema:", opcoes_itens)
+            item_selecionado = st.selectbox("Pesquise e selecione o item correspondente do sistema: \n Dica: se a busca retorar itens parecidos, opte pelo insumo", opcoes_itens)
             
             unidade_csv = df_cadastrados.loc[df_cadastrados['Nome'] == item_selecionado, 'Unidade'].values[0]
 
