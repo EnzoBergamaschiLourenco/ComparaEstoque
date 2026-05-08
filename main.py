@@ -10,13 +10,11 @@ from github import Github, GithubException
 from export_reader import processar_export_csv
 
 # Importações dos módulos existentes
-from email_reader import buscar_link
-from umovextractor import extrair_produtos
+from suplycount import buscar_link, extrair_produtos, processar_export_csv, obter_contagem_consolidada
 from nfextractor import extrair_dados_tabresult
-from report_converter import convert_report
+from reportconverter import convert_report
 from addpurchase import consolidar_com_dicionario
 from salesdeducer import processar_estoque as deduzir_vendas
-from importconverter import converter_estoque_para_csv
 
 # --- CONFIGURAÇÃO GITHUB (Pegando dos Secrets) ---
 GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
@@ -170,47 +168,22 @@ if st.session_state.fase == 'inicio':
 
     if st.button("🚀 Iniciar Processamento", use_container_width=True):
         sucesso_contagem = False
+        if not (email_user and senha_user and arquivo_csv and arquivo_vendas):
+            st.error("⚠️ Erro: E-mail, Senha, Cadastro_Itens.csv e Relatório de Vendas são obrigatórios para continuar.")
+            st.stop()
         
         # 1. Obter a Contagem (CSV ou Email)
-        if arquivo_csv is not None:
-            with st.status("Processando arquivo enviado...") as status:
-                with open("temp_cadastro.csv", "wb") as f:
-                    f.write(arquivo_csv.getbuffer())
+        with st.status("Consolidando dados de contagem...") as status:
+            # Salva o CSV temporariamente para ser lido pela função de consolidação
+            with open("temp_cadastro.csv", "wb") as f:
+                f.write(arquivo_csv.getbuffer())
+
+                status.write("⏳ Buscando e-mail e somando com dados do CSV...")
+                resultado_contagem = obter_contagem_consolidada(email_user, senha_user, "temp_cadastro.csv")
                 
-                sucesso, msg = processar_export_csv("temp_cadastro.csv", "produtos_contagem.json")
-                if sucesso:
-                    status.update(label="✅ CSV processado!", state="complete")
-                    sucesso_contagem = True
-                else:
-                    st.error(msg)
-        
-        elif email_user and senha_user:
-            with st.status("Iniciando busca no e-mail...") as status:
-                # Passo A: Buscar o Link
-                status.write("🔍 Conectando ao servidor IMAP...")
-                link = buscar_link(email_user, senha_user)
-                
-                if not link:
-                    st.error("❌ Nenhum e-mail da uMov.me encontrado ou falha no login.")
-                else:
-                    # Passo B: Extrair os produtos do link
-                    status.write("🌐 Acessando link da contagem...")
-                    try:
-                        if extrair_produtos(link): 
-                            # Verificação se o arquivo alvo foi realmente criado pelo umovextractor
-                            if os.path.exists("produtos_contagem.json"):
-                                status.update(label="✅ Contagem extraída com sucesso!", state="complete")
-                                sucesso_contagem = True
-                            else:
-                                st.error("❌ O umovextractor finalizou, mas o arquivo 'produtos_contagem.json' não foi encontrado.")
-                        else:
-                            st.error("❌ O umovextractor não conseguiu processar os dados do link.")
-                    except Exception as e:
-                        st.error(f"❌ Erro na execução do umovextractor: {e}")
-                    else:
-                        st.error("❌ Falha ao extrair produtos do link.")
-        else:
-            st.warning("⚠️ Forneça o arquivo CSV ou as credenciais de e-mail.")
+                if resultado_contagem:
+                    st.success(f"✅ Sucesso! {len(resultado_contagem)} itens consolidados.")
+                    sucesso_contagem=True
 
         # 2. Se a contagem foi obtida, processar NF-es e Vendas
         if sucesso_contagem:

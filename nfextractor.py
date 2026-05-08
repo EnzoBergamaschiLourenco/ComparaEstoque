@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import re
-from report_converter import string_to_float
+from reportconverter import string_to_float
 
 def extrair_dados_tabresult(url):
     try:
