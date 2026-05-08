@@ -10,6 +10,7 @@ from github import Github, GithubException
 from export_reader import processar_export_csv
 
 # Importações dos módulos existentes
+from email_reader import buscar_link
 from umovextractor import extrair_produtos
 from nfextractor import extrair_dados_tabresult
 from report_converter import convert_report
@@ -144,10 +145,15 @@ st.title("📦 Sistema de Automação de Estoque")
 # ==========================================
 if st.session_state.fase == 'inicio':
     st.header("1. Acesso à Contagem (uMov.me)")
+    st.caption("Escolha uma opção: Suba o arquivo exportado OU use as credenciais de e-mail.")
+    
     col1, col2, col3 = st.columns([1, 1, 1.5])
-    with col1: email_usuario = st.text_input("E-mail IMAP", placeholder="usuario@dominio.com")
-    with col2: senha_usuario = st.text_input("Senha IMAP", type="password")
-    with col3: arquivo_exportado = st.file_uploader("Upload Cadastro_Itens.csv", type=["csv"])
+    with col1: 
+        email_user = st.text_input("E-mail IMAP", placeholder="usuario@dominio.com")
+    with col2: 
+        senha_user = st.text_input("Senha IMAP", type="password")
+    with col3: 
+        arquivo_csv = st.file_uploader("Upload Cadastro_Itens.csv", type=["csv"])
 
     st.header("2. Notas Fiscais de Compra (NFC-e)")
     for i, url in enumerate(st.session_state.lista_nfe):
@@ -162,56 +168,83 @@ if st.session_state.fase == 'inicio':
 
     st.divider()
 
-    if st.button("🚀 Iniciar Processamento", type="primary"):
-        if not email_usuario or not senha_usuario or not arquivo_exportado:
-            st.error("Por favor, preencha o E-mail, Senha e suba o arquivo CSV para continuar.")
-        else:
-            # Salvando arquivo temporariamente para processar
-            with open("temp_cadastro.csv", "wb") as f:
-                f.write(arquivo_exportado.getbuffer())
-            sucesso, mensagem = processar_export_csv("temp_cadastro.csv")
+    if st.button("🚀 Iniciar Processamento", use_container_width=True):
+        sucesso_contagem = False
+        
+        # Validação básica
+        if not arquivo_vendas:
+            st.error("O relatório de vendas é obrigatório.")
             st.stop()
 
-        with st.spinner("Extraindo dados iniciais..."):
-            # Extração uMov.me
-            linkumov = buscar_link_email(email_usuario, senha_usuario)
-            if linkumov: extrair_produtos(linkumov)
-            
-            # Extração NF-e
-            compras_totais = []
-            for url in st.session_state.lista_nfe:
-                if url.strip():
-                    dados_nota = extrair_dados_tabresult(url)
-                    if dados_nota: compras_totais.extend(dados_nota)
-            with open("produtos_compra.json", "w", encoding="utf-8") as f:
-                json.dump(compras_totais, f, ensure_ascii=False, indent=4)
+        # --- ETAPA 1: Obter a Contagem (Prioridade para o Arquivo CSV) ---
+        if arquivo_csv is not None:
+            with st.status("Lendo arquivo de itens...") as status:
+                with open("temp_cadastro.csv", "wb") as f:
+                    f.write(arquivo_csv.getbuffer())
+                
+                sucesso, msg = processar_export_csv("temp_cadastro.csv", "produtos_contagem.json")
+                if sucesso:
+                    st.success("Contagem extraída do CSV!")
+                    sucesso_contagem = True
+                else:
+                    st.error(msg)
+        
+        elif email_user and senha_user:
+            with st.status("Buscando link no e-mail...") as status:
+                link = buscar_link(email_user, senha_user)
+                if link and extrair_produtos(link):
+                    if convert_report("report.html", "produtos_contagem.json"):
+                        st.success("Contagem extraída do e-mail!")
+                        sucesso_contagem = True
+                else:
+                    st.error("Falha ao localizar ou extrair dados do e-mail.")
+        else:
+            st.warning("Forneça o arquivo 'Cadastro_Itens.csv' ou as credenciais de e-mail.")
 
-            # Conversão Vendas
-            with open("temp_vendas.csv", "wb") as f: f.write(arquivo_vendas.getbuffer())
-            convert_report("temp_vendas.csv", 'resultado_vendas.json')
+        # --- ETAPA 2: Processar Compras e Vendas (Apenas se a Etapa 1 funcionou) ---
+        if sucesso_contagem:
+            with st.status("Processando NF-es e Vendas...") as status:
+                # Extração NF-e
+                compras_totais = []
+                for url in st.session_state.lista_nfe:
+                    if url.strip():
+                        dados_nota = extrair_dados_tabresult(url)
+                        if dados_nota: 
+                            compras_totais.extend(dados_nota)
+                
+                with open("produtos_compra.json", "w", encoding="utf-8") as f:
+                    json.dump(compras_totais, f, ensure_ascii=False, indent=4)
 
-            # --- VERIFICAÇÃO DE ITENS NÃO MAPEADOS ---
-            try:
-                with open("purchasedictionary.json", "r", encoding="utf-8") as f:
-                    p_dict = json.load(f)
-            except FileNotFoundError:
-                p_dict = {}
+                # Processamento Vendas
+                with open("temp_vendas.csv", "wb") as f: 
+                    f.write(arquivo_vendas.getbuffer())
+                # Note: convert_report deve ser capaz de lidar com o CSV de vendas aqui
+                convert_report("temp_vendas.csv", 'resultado_vendas.json')
 
-            nomes_conhecidos = []
-            for v in p_dict.values():
-                for s in v.get("sinonimos", []):
-                    nomes_conhecidos.append(s["nome"])
+                # --- ETAPA 3: Verificar Mapeamento ---
+                try:
+                    with open("purchasedictionary.json", "r", encoding="utf-8") as f:
+                        p_dict = json.load(f)
+                except FileNotFoundError:
+                    p_dict = {}
 
-            nao_mapeados = [item for item in compras_totais if item["nome"] not in nomes_conhecidos]
+                # Achatando nomes conhecidos no dicionário para comparação
+                nomes_conhecidos = []
+                for v in p_dict.values():
+                    if "sinonimos" in v:
+                        for s in v["sinonimos"]:
+                            nomes_conhecidos.append(s["nome"])
 
-            if nao_mapeados:
-                st.session_state.itens_pendentes = nao_mapeados
-                st.session_state.fase = 'mapeamento'
-            else:
-                st.session_state.fase = 'finalizacao'
-            
-            st.rerun()
+                # Itens da nota que não existem no dicionário
+                nao_mapeados = [item for item in compras_totais if item["nome"] not in nomes_conhecidos]
 
+                if nao_mapeados:
+                    st.session_state.itens_pendentes = nao_mapeados
+                    st.session_state.fase = 'mapeamento'
+                else:
+                    st.session_state.fase = 'finalizacao'
+                
+                st.rerun()
 # ==========================================
 # FASE 1: RESOLUÇÃO DE ITENS DESCONHECIDOS
 # ==========================================
