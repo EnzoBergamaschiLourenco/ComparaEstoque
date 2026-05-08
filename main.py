@@ -195,15 +195,18 @@ if st.session_state.fase == 'inicio':
                 else:
                     # Passo B: Extrair os produtos do link
                     status.write("🌐 Acessando link da contagem...")
-                    if extrair_produtos(link):
-                        
-                        # Passo C: Converter HTML para JSON
-                        status.write("⚙️ Convertendo dados para o sistema...")
-                        if convert_report("report.html", "produtos_contagem.json"):
-                            status.update(label="✅ Dados do e-mail extraídos!", state="complete")
-                            sucesso_contagem = True
+                    try:
+                        if extrair_produtos(link): 
+                            # Verificação se o arquivo alvo foi realmente criado pelo umovextractor
+                            if os.path.exists("produtos_contagem.json"):
+                                status.update(label="✅ Contagem extraída com sucesso!", state="complete")
+                                sucesso_contagem = True
+                            else:
+                                st.error("❌ O umovextractor finalizou, mas o arquivo 'produtos_contagem.json' não foi encontrado.")
                         else:
-                            st.error("❌ Erro ao converter o relatório HTML.")
+                            st.error("❌ O umovextractor não conseguiu processar os dados do link.")
+                    except Exception as e:
+                        st.error(f"❌ Erro na execução do umovextractor: {e}")
                     else:
                         st.error("❌ Falha ao extrair produtos do link.")
         else:
