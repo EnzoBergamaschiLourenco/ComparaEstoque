@@ -171,33 +171,42 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     """
     total_estoque = {}
 
-    # 1. Obter dados do E-mail (via Link)
+    # 1. Obter dados do E-mail
     link = buscar_link(email, senha)
     dados_email = extrair_produtos(link) if link else []
+    
+    # Segurança: Se a função retornar uma tupla (ex: sucesso, erro), pega só a lista
+    if isinstance(dados_email, tuple):
+        dados_email = dados_email[0] if isinstance(dados_email[0], list) else []
 
     # 2. Obter dados do CSV
-    dados_csv = processar_export_csv(caminho_csv)
+    dados_csv = extrair_dados_csv(caminho_csv)
+    
+    if isinstance(dados_csv, tuple):
+        dados_csv = dados_csv[0] if isinstance(dados_csv[0], list) else []
+
+    # Garante que ambos são listas para evitar o TypeError
+    lista_unificada = list(dados_email or []) + list(dados_csv or [])
 
     # 3. Consolidar e Somar
-    # Unificamos as duas listas em um loop
-    for item in (dados_email + dados_csv):
-        nome = item['nome']
-        quantidade = item['quantidade']
-        unidade = item['unidade']
+    for item in lista_unificada:
+        # Verifica se o item é um dicionário válido
+        if isinstance(item, dict) and 'nome' in item:
+            nome = item['nome']
+            quantidade = item.get('quantidade', 0)
+            unidade = item.get('unidade', 'UN')
 
-        if nome in total_estoque:
-            total_estoque[nome]['quantidade'] += quantidade
-        else:
-            total_estoque[nome] = {
-                "nome": nome,
-                "unidade": unidade,
-                "quantidade": quantidade
-            }
+            if nome in total_estoque:
+                total_estoque[nome]['quantidade'] += quantidade
+            else:
+                total_estoque[nome] = {
+                    "nome": nome,
+                    "unidade": unidade,
+                    "quantidade": quantidade
+                }
 
-    # Retorna como uma lista de dicionários (formato padrão do seu sistema)
     resultado_final = list(total_estoque.values())
     
-    # Salva o resultado consolidado para os próximos scripts
     with open("produtos_contagem.json", "w", encoding="utf-8") as f:
         json.dump(resultado_final, f, indent=4, ensure_ascii=False)
         

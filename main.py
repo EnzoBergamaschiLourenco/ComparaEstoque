@@ -9,7 +9,7 @@ from datetime import datetime
 from github import Github, GithubException
 
 # Importações dos módulos existentes
-from suplycount import buscar_link, extrair_produtos, processar_export_csv, obter_contagem_consolidada
+from suplycount import obter_contagem_consolidada
 from nfextractor import extrair_dados_tabresult
 from reportconverter import convert_report
 from addpurchase import consolidar_com_dicionario
