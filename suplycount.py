@@ -7,6 +7,7 @@ import json
 from reportconverter import string_to_float
 import requests
 from bs4 import BeautifulSoup
+import streamlit as st
 
 def buscar_link(email_usuario, senha_usuario):
     """
@@ -171,6 +172,9 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     
     if isinstance(dados_csv, tuple):
         dados_csv = dados_csv[0] if (len(dados_csv) > 0 and isinstance(dados_csv[0], list)) else []
+    st.write("🔍 DEBUG EMAIL:", dados_email)
+    st.write("🔍 DEBUG CSV:", dados_csv)
+    st.write("🔍 TAMANHOS:", len(dados_email), len(dados_csv))
 
     # 3. Unificar e Somar
     # Forçamos a conversão para lista para evitar o TypeError de concatenação
@@ -197,7 +201,8 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
                     "unidade": unidade,
                     "quantidade": qtd
                 }
-                print(f"NOME: '{nome}' | QTD: {qtd}")
+                st.json(dados_email[:3])
+                st.json(dados_csv[:3])
 
     resultado_final = list(total_estoque.values())
     
