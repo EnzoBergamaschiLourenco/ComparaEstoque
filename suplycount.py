@@ -155,7 +155,8 @@ def processar_export_csv(caminho_csv):
 
 def obter_contagem_consolidada(email, senha, caminho_csv):
     """
-    Soma as quantidades do E-mail e do CSV.
+    Soma as quantidades do E-mail e do CSV baseando-se no nome.
+    Preserva a entrada completa (unidade, etc) de itens únicos.
     """
     total_estoque = {}
 
@@ -163,50 +164,48 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     link = buscar_link(email, senha)
     dados_email = extrair_produtos(link) if link else []
     
-    # Proteção: se extrair_produtos retornar (lista, status) ou similar
+    # Tratamento de segurança para garantir que temos uma lista (evita TypeError de tupla)
     if isinstance(dados_email, tuple):
         dados_email = dados_email[0] if (len(dados_email) > 0 and isinstance(dados_email[0], list)) else []
+    elif not isinstance(dados_email, list):
+        dados_email = []
 
-    # 2. Obter dados do CSV (Usando o nome correto da função que você já tem)
+    # 2. Obter dados do CSV
     dados_csv = processar_export_csv(caminho_csv)
     
     if isinstance(dados_csv, tuple):
         dados_csv = dados_csv[0] if (len(dados_csv) > 0 and isinstance(dados_csv[0], list)) else []
-    st.write("🔍 DEBUG EMAIL:", dados_email)
-    st.write("🔍 DEBUG CSV:", dados_csv)
-    st.write("🔍 TAMANHOS:", len(dados_email), len(dados_csv))
+    elif not isinstance(dados_csv, list):
+        dados_csv = []
 
-    # 3. Unificar e Somar
-    # Forçamos a conversão para lista para evitar o TypeError de concatenação
-    lista_unificada = list(dados_email if isinstance(dados_email, list) else []) + \
-                      list(dados_csv if isinstance(dados_csv, list) else [])
+    # 3. Consolidação por Nome
+    # Unificamos as listas para iterar uma única vez
+    lista_unificada = dados_email + dados_csv
+
     for item in lista_unificada:
         if isinstance(item, dict) and 'nome' in item:
+            # Normaliza o nome para evitar erros com espaços extras
             nome = str(item['nome']).strip()
-            unidade = str(item.get('unidade', 'UN')).strip().upper()
-
-            chave = f"{nome}|{unidade}"
-            # Garante que quantidade seja float para poder somar
+            
             try:
-                qtd = float(item.get('quantidade', 0))
-            except:
-                qtd = 0.0
-            unidade = item.get('unidade', 'UN')
+                qtd_atual = float(item.get('quantidade', 0))
+            except (ValueError, TypeError):
+                qtd_atual = 0.0
 
-            if chave in total_estoque:
-                total_estoque[chave]['quantidade'] += qtd
+            if nome in total_estoque:
+                # Se o nome já existe, apenas somamos a quantidade ao dicionário já guardado
+                total_estoque[nome]['quantidade'] += qtd_atual
             else:
-                total_estoque[chave] = {
-                    "nome": nome,
-                    "unidade": unidade,
-                    "quantidade": qtd
-                }
-                st.json(dados_email[:3])
-                st.json(dados_csv[:3])
+                # Se é a primeira vez que vemos este nome:
+                # Copiamos o item TODO (preservando unidade, identificadores, etc)
+                total_estoque[nome] = item.copy()
+                # Garantimos que a quantidade seja tratada como float
+                total_estoque[nome]['quantidade'] = qtd_atual
 
+    # Transforma o dicionário de volta em uma lista para o JSON final
     resultado_final = list(total_estoque.values())
     
-    # Salva o arquivo que o sistema espera
+    # Salva o arquivo produtos_contagem.json
     with open("produtos_contagem.json", "w", encoding="utf-8") as f:
         json.dump(resultado_final, f, indent=4, ensure_ascii=False)
         
