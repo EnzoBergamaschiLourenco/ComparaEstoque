@@ -26,11 +26,14 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
         with open(arquivo_contagem, "r", encoding="utf-8") as f:
             contagem = json.load(f)
             for item in contagem:
-                nome = item["nome"]
-                qtd = float(str(item.get("quantidade", "0")).replace(",", "."))
-                estoque_final[nome] = {"quantidade": qtd, "unidade": item["unidade"], "quantidadeContagem": item["quantidadeContagem"]}
+                nome = item['nome']
+                estoque_final[nome] = {
+                    "quantidade": item['quantidade'],
+                    "unidade": item['unidade'],
+                    "quantidadeContagem": item.get('quantidadeContagem', 0) # Preserva o valor original
+                }
     except FileNotFoundError:
-        print(f"Aviso: {arquivo_contagem} não encontrado. Iniciando estoque zerado.")
+        pass
 
     # 3. Processar Compras e Aplicar Regras do Dicionário
     try:
@@ -45,7 +48,7 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
                 qtd_nota = 0.0
 
             if nome_nota in mapa_tradução:
-                nome_correto, fator, unidade_fixa, quantidadeContagem = mapa_tradução[nome_nota]
+                nome_correto, fator, unidade_fixa, = mapa_tradução[nome_nota]
                 
                 # Aplica a regra: Quantidade Final = Qtd da Nota * Fator do Dicionário
                 quantidade_convertida = qtd_nota * fator
@@ -57,7 +60,7 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
                     estoque_final[nome_correto] = {
                         "quantidade": quantidade_convertida,
                         "unidade": unidade_fixa,
-                        "quantidadeContagem": quantidadeContagem
+                        "quantidadeContagem": 0
                     }
                 print(f"✅ Traduzido: '{nome_nota}' -> '{nome_correto}' (+{quantidade_convertida} {unidade_fixa} {quantidadeContagem})")
             else:

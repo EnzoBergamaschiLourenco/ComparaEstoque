@@ -75,7 +75,7 @@ def processar_estoque(arquivo_estoque, arquivo_vendas, arquivo_dicionario, arqui
             "nome": nome,
             "quantidade": round(dados["quantidade"], 3),
             "unidade": dados["unidade"],
-            "quantidadeContagem": dadps["quantidadeContagem"]
+            "quantidadeContagem": dados["quantidadeContagem"]
         })
 
     with open(arquivo_saida, "w", encoding="utf-8") as f:
