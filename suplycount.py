@@ -154,26 +154,25 @@ def processar_export_csv(caminho_csv):
 
 def obter_contagem_consolidada(email, senha, caminho_csv):
     """
-    Soma as quantidades do E-mail e/ou do CSV baseando-se no nome.
-    Ignora fontes que não foram fornecidas.
+    Consolida dados do CSV e Email. 
+    Se o item existir em ambos, a quantidade do Email prevalece.
     """
     total_estoque = {}
     dados_email = []
     dados_csv = []
 
-    # 1. Obter dados do E-mail (somente se as credenciais existirem)
+    # 1. Obter dados do E-mail
     if email and senha:
         link = buscar_link(email, senha)
         if link:
             dados_email = extrair_produtos(link)
     
-    # Tratamento de segurança para dados do email
     if isinstance(dados_email, tuple):
         dados_email = dados_email[0] if (len(dados_email) > 0 and isinstance(dados_email[0], list)) else []
     elif not isinstance(dados_email, list):
         dados_email = []
 
-    # 2. Obter dados do CSV (somente se o caminho existir e o arquivo for válido)
+    # 2. Obter dados do CSV
     if caminho_csv and os.path.exists(caminho_csv):
         dados_csv = processar_export_csv(caminho_csv)
     
@@ -182,29 +181,52 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     elif not isinstance(dados_csv, list):
         dados_csv = []
 
-    # 3. Consolidação por Nome
-    lista_unificada = dados_email + dados_csv
-
-    if not lista_unificada:
-        return None
-
-    for item in lista_unificada:
+    # 3. Consolidação com Regra de Prioridade
+    
+    # Passo A: Processar CSV primeiro (Base)
+    for item in dados_csv:
         if isinstance(item, dict) and 'nome' in item:
             nome = str(item['nome']).strip()
-            
             try:
-                qtd_atual = float(item.get('quantidade', 0))
+                qtd = float(item.get('quantidade', 0))
             except (ValueError, TypeError):
-                qtd_atual = 0.0
-
+                qtd = 0.0
+            
+            # Se houver duplicatas dentro do PRÓPRIO CSV, somamos
             if nome in total_estoque:
-                total_estoque[nome]['quantidade'] += qtd_atual
+                total_estoque[nome]['quantidade'] += qtd
             else:
                 total_estoque[nome] = item.copy()
-                total_estoque[nome]['quantidade'] = qtd_atual
+                total_estoque[nome]['quantidade'] = qtd
+
+    # Passo B: Processar Email (Prioridade)
+    # Criamos um dicionário temporário para o email para somar duplicatas internas do email antes da sobreposição
+    estoque_email_temp = {}
+    for item in dados_email:
+        if isinstance(item, dict) and 'nome' in item:
+            nome = str(item['nome']).strip()
+            try:
+                qtd = float(item.get('quantidade', 0))
+            except (ValueError, TypeError):
+                qtd = 0.0
+                
+            if nome in estoque_email_temp:
+                estoque_email_temp[nome]['quantidade'] += qtd
+            else:
+                estoque_email_temp[nome] = item.copy()
+                estoque_email_temp[nome]['quantidade'] = qtd
+
+    # Passo C: Sobrepor os dados do CSV com os do Email
+    for nome, item_email in estoque_email_temp.items():
+        # Isso vai substituir o item do CSV pelo do Email se o nome for igual,
+        # ou adicionar o item se ele só existir no Email.
+        total_estoque[nome] = item_email
 
     resultado_final = list(total_estoque.values())
     
+    if not resultado_final:
+        return None
+
     with open("produtos_contagem.json", "w", encoding="utf-8") as f:
         json.dump(resultado_final, f, indent=4, ensure_ascii=False)
         
