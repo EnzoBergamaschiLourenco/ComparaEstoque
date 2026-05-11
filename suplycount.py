@@ -8,6 +8,7 @@ from reportconverter import string_to_float
 import requests
 from bs4 import BeautifulSoup
 import streamlit as st
+import os
 
 def buscar_link(email_usuario, senha_usuario):
     """
@@ -118,9 +119,6 @@ def extrair_produtos(url):
                     "unidade": unidade if unidade else "N/A"
                 })
 
-        # Opcional: Remover duplicatas se o relatório repetir o mesmo item
-        # produtos = [dict(t) for t in {tuple(d.items()) for d in produtos}]
-
         print(f"{len(produtos)} registros de produtos encontrados")
 
         # 📦 Salvar JSON
@@ -155,23 +153,28 @@ def processar_export_csv(caminho_csv):
 
 def obter_contagem_consolidada(email, senha, caminho_csv):
     """
-    Soma as quantidades do E-mail e do CSV baseando-se no nome.
-    Preserva a entrada completa (unidade, etc) de itens únicos.
+    Soma as quantidades do E-mail e/ou do CSV baseando-se no nome.
+    Ignora fontes que não foram fornecidas.
     """
     total_estoque = {}
+    dados_email = []
+    dados_csv = []
 
-    # 1. Obter dados do E-mail
-    link = buscar_link(email, senha)
-    dados_email = extrair_produtos(link) if link else []
+    # 1. Obter dados do E-mail (somente se as credenciais existirem)
+    if email and senha:
+        link = buscar_link(email, senha)
+        if link:
+            dados_email = extrair_produtos(link)
     
-    # Tratamento de segurança para garantir que temos uma lista (evita TypeError de tupla)
+    # Tratamento de segurança para dados do email
     if isinstance(dados_email, tuple):
         dados_email = dados_email[0] if (len(dados_email) > 0 and isinstance(dados_email[0], list)) else []
     elif not isinstance(dados_email, list):
         dados_email = []
 
-    # 2. Obter dados do CSV
-    dados_csv = processar_export_csv(caminho_csv)
+    # 2. Obter dados do CSV (somente se o caminho existir e o arquivo for válido)
+    if caminho_csv and os.path.exists(caminho_csv):
+        dados_csv = processar_export_csv(caminho_csv)
     
     if isinstance(dados_csv, tuple):
         dados_csv = dados_csv[0] if (len(dados_csv) > 0 and isinstance(dados_csv[0], list)) else []
@@ -179,12 +182,13 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
         dados_csv = []
 
     # 3. Consolidação por Nome
-    # Unificamos as listas para iterar uma única vez
     lista_unificada = dados_email + dados_csv
+
+    if not lista_unificada:
+        return None
 
     for item in lista_unificada:
         if isinstance(item, dict) and 'nome' in item:
-            # Normaliza o nome para evitar erros com espaços extras
             nome = str(item['nome']).strip()
             
             try:
@@ -193,19 +197,13 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
                 qtd_atual = 0.0
 
             if nome in total_estoque:
-                # Se o nome já existe, apenas somamos a quantidade ao dicionário já guardado
                 total_estoque[nome]['quantidade'] += qtd_atual
             else:
-                # Se é a primeira vez que vemos este nome:
-                # Copiamos o item TODO (preservando unidade, identificadores, etc)
                 total_estoque[nome] = item.copy()
-                # Garantimos que a quantidade seja tratada como float
                 total_estoque[nome]['quantidade'] = qtd_atual
 
-    # Transforma o dicionário de volta em uma lista para o JSON final
     resultado_final = list(total_estoque.values())
     
-    # Salva o arquivo produtos_contagem.json
     with open("produtos_contagem.json", "w", encoding="utf-8") as f:
         json.dump(resultado_final, f, indent=4, ensure_ascii=False)
         

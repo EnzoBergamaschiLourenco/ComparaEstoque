@@ -167,24 +167,48 @@ if st.session_state.fase == 'inicio':
     st.divider()
 
     if st.button("🚀 Iniciar Processamento", use_container_width=True):
+        # Validação lógica do novo fluxo
+        tem_email = email_user and senha_user
+        tem_csv = arquivo_csv is not None
+        
+        if not arquivo_vendas:
+            st.error("❌ Erro: O Relatório de Vendas é obrigatório.")
+            st.stop()
+            
+        if not (tem_email or tem_csv):
+            st.error("⚠️ Erro: Forneça as credenciais de e-mail OU o arquivo Cadastro_Itens.csv.")
+            st.stop()
+
         sucesso_contagem = False
-        if not (email_user and senha_user and arquivo_vendas):
-            if not (arquivo_csv and arquivo_vendas):
-                st.error("⚠️ Erro: Relatório de vendas + email e senha OU Cadastro_Itens.csv são obrigatórios.")
-                st.stop()
         
         # 1. Obter a Contagem (CSV ou Email)
         with st.status("Consolidando dados de contagem...") as status:
-            # Salva o CSV temporariamente para ser lido pela função de consolidação
-            with open("temp_cadastro.csv", "wb") as f:
-                f.write(arquivo_csv.getbuffer())
+            caminho_temp_csv = None
+            
+            # Se o usuário subiu um CSV, salvamos temporariamente
+            if tem_csv:
+                caminho_temp_csv = "temp_cadastro.csv"
+                with open(caminho_temp_csv, "wb") as f:
+                    f.write(arquivo_csv.getbuffer())
 
-                status.write("⏳ Buscando e-mail e somando com dados do CSV...")
-                resultado_contagem = obter_contagem_consolidada(email_user, senha_user, "temp_cadastro.csv")
-                
-                if resultado_contagem:
-                    st.success(f"✅ Sucesso! {len(resultado_contagem)} itens consolidados.")
-                    sucesso_contagem=True
+            status.write("⏳ Processando fontes de dados disponíveis...")
+            
+            # Chama a função; se um dos parâmetros for None, suplycount.py tratará internamente
+            resultado_contagem = obter_contagem_consolidada(
+                email_user if tem_email else None, 
+                senha_user if tem_email else None, 
+                caminho_temp_csv
+            )
+            
+            if resultado_contagem:
+                st.success(f"✅ Sucesso! {len(resultado_contagem)} itens consolidados.")
+                sucesso_contagem = True
+            else:
+                st.error("❌ Não foi possível obter dados de contagem das fontes fornecidas.")
+
+        # Limpeza do arquivo temporário do CSV se ele existiu
+        if tem_csv and os.path.exists("temp_cadastro.csv"):
+            os.remove("temp_cadastro.csv")
 
         # 2. Se a contagem foi obtida, processar NF-es e Vendas
         if sucesso_contagem:
