@@ -169,12 +169,9 @@ if st.session_state.fase == 'inicio':
     if st.button("🚀 Iniciar Processamento", use_container_width=True):
         sucesso_contagem = False
         if not (email_user and senha_user and arquivo_vendas):
-            st.error("⚠️ Erro: Relatório de vendas + email e senha OU Cadastro_Itens.csv sãobrigatórios.")
-            st.stop()
-        if not (arquivo_csv and arquivo_vendas):
-            st.error("⚠️ Erro: Relatório de vendas + email e senha OU Cadastro_Itens.csv sãobrigatórios.")
-            st.stop()
-        
+            if not (arquivo_csv and arquivo_vendas):
+                st.error("⚠️ Erro: Relatório de vendas + email e senha OU Cadastro_Itens.csv são obrigatórios.")
+                st.stop()
         
         # 1. Obter a Contagem (CSV ou Email)
         with st.status("Consolidando dados de contagem...") as status:
