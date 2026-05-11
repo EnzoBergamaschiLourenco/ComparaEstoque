@@ -142,7 +142,8 @@ def processar_export_csv(caminho_csv):
             produtos.append({
                 "nome": str(row['DESCRIÇÃO ITEM']),
                 "unidade": str(row['Unidade de medida']),
-                "quantidade": float(row['QuantidadeContagem']) if pd.notnull(row['QuantidadeContagem']) else 0.0
+                "quantidade": float(row['Quantidade']) if pd.notnull(row['Quantidade']) else 0.0,
+                "quantidadeContagem": float(row['QuantidadeContagem']) if pd.notnull(row['QuantidadeContagem']) else 0.0
             })
         return produtos # Retorna uma lista
     except Exception as e:
