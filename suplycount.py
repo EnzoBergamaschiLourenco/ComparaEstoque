@@ -135,7 +135,7 @@ def processar_export_csv(caminho_csv):
     """Lê o Cadastro_Itens.csv e retorna a lista de produtos"""
     try:
         df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='utf-8')
-        df_contagem = df[df['ATIVO ITEM'] == '1']
+        df_contagem = df[df['ATIVO ITEM'] == 1]
         
         produtos = []
         for _, row in df_contagem.iterrows():
