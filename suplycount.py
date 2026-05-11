@@ -116,6 +116,7 @@ def extrair_produtos(url):
                 produtos.append({
                     "nome": nome,
                     "quantidade": string_to_float(quantidade),
+                    "quantidadeContagem": string_to_float(quantidade),
                     "unidade": unidade if unidade else "N/A"
                 })
 
@@ -191,13 +192,19 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
                 qtd = float(item.get('quantidade', 0))
             except (ValueError, TypeError):
                 qtd = 0.0
+            try:
+                qtdC = float(item.get('quantidadeContagem', 0))
+            except (ValueError, TypeError):
+                qtdC = 0.0
             
             # Se houver duplicatas dentro do PRÓPRIO CSV, somamos
             if nome in total_estoque:
                 total_estoque[nome]['quantidade'] += qtd
+                total_estoque[nome]['quantidadeContagem'] += qtdC
             else:
                 total_estoque[nome] = item.copy()
                 total_estoque[nome]['quantidade'] = qtd
+                total_estoque[nome]['quantidadeContagem'] = qtdC
 
     # Passo B: Processar Email (Prioridade)
     # Criamos um dicionário temporário para o email para somar duplicatas internas do email antes da sobreposição
@@ -209,12 +216,18 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
                 qtd = float(item.get('quantidade', 0))
             except (ValueError, TypeError):
                 qtd = 0.0
+            try:
+                qtdC = float(item.get('quantidadeContagem', 0))
+            except (ValueError, TypeError):
+                qtdC = 0.0
                 
             if nome in estoque_email_temp:
                 estoque_email_temp[nome]['quantidade'] += qtd
+                estoque_email_temp[nome]['quantidadeContagem'] += qtdC
             else:
                 estoque_email_temp[nome] = item.copy()
                 estoque_email_temp[nome]['quantidade'] = qtd
+                estoque_email_temp[nome]['quantidadeContagem'] = qtdC
 
     # Passo C: Sobrepor os dados do CSV com os do Email
     for nome, item_email in estoque_email_temp.items():

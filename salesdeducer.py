@@ -25,9 +25,14 @@ def processar_estoque(arquivo_estoque, arquivo_vendas, arquivo_dicionario, arqui
             qtd = float(str(item.get("quantidade", "0")).replace(",", "."))
         except ValueError:
             qtd = 0.0
+        try:
+            qtdC = float(str(item.get("quantidadeContagem", "0")).replace(",", "."))
+        except ValueError:
+            qtdC = 0.0
         estoque_map[nome] = {
             "quantidade": qtd,
-            "unidade": item.get("unidade", "").upper().strip()
+            "unidade": item.get("unidade", "").upper().strip(),
+            "quantidadeContagem": qtdC
         }
 
     # 3. Carregar as vendas
@@ -69,7 +74,8 @@ def processar_estoque(arquivo_estoque, arquivo_vendas, arquivo_dicionario, arqui
         resultado_final.append({
             "nome": nome,
             "quantidade": round(dados["quantidade"], 3),
-            "unidade": dados["unidade"]
+            "unidade": dados["unidade"],
+            "quantidadeContagem": dadps["quantidadeContagem"]
         })
 
     with open(arquivo_saida, "w", encoding="utf-8") as f:

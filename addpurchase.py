@@ -13,10 +13,11 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
     mapa_tradução = {}
     for nome_correto, info in purchasedict.items():
         unidade_fixa = info.get("unidade")
+        quantidadeContagem = info.get("quantidadeContagem")
         for sinonimo in info.get("sinonimos", []):
             nome_na_nota = sinonimo["nome"]
             fator = sinonimo["quantidade"]
-            mapa_tradução[nome_na_nota] = (nome_correto, fator, unidade_fixa)
+            mapa_tradução[nome_na_nota] = (nome_correto, fator, unidade_fixa, quantidadeContagem)
 
     # 2. Carregar o Estoque Atual (Contagem)
     # Formato: { "Nome Correto": {"quantidade": float, "unidade": str} }
@@ -27,7 +28,7 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
             for item in contagem:
                 nome = item["nome"]
                 qtd = float(str(item.get("quantidade", "0")).replace(",", "."))
-                estoque_final[nome] = {"quantidade": qtd, "unidade": item["unidade"]}
+                estoque_final[nome] = {"quantidade": qtd, "unidade": item["unidade"], "quantidadeContagem": item["quantidadeContagem"]}
     except FileNotFoundError:
         print(f"Aviso: {arquivo_contagem} não encontrado. Iniciando estoque zerado.")
 
@@ -44,7 +45,7 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
                 qtd_nota = 0.0
 
             if nome_nota in mapa_tradução:
-                nome_correto, fator, unidade_fixa = mapa_tradução[nome_nota]
+                nome_correto, fator, unidade_fixa, quantidadeContagem = mapa_tradução[nome_nota]
                 
                 # Aplica a regra: Quantidade Final = Qtd da Nota * Fator do Dicionário
                 quantidade_convertida = qtd_nota * fator
@@ -55,9 +56,10 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
                     # Se o item traduzido não estava na contagem, ele entra como novo
                     estoque_final[nome_correto] = {
                         "quantidade": quantidade_convertida,
-                        "unidade": unidade_fixa
+                        "unidade": unidade_fixa,
+                        "quantidadeContagem": quantidadeContagem
                     }
-                print(f"✅ Traduzido: '{nome_nota}' -> '{nome_correto}' (+{quantidade_convertida} {unidade_fixa})")
+                print(f"✅ Traduzido: '{nome_nota}' -> '{nome_correto}' (+{quantidade_convertida} {unidade_fixa} {quantidadeContagem})")
             else:
                 # Se não houver sinônimo, gera o aviso e não soma
                 print(f"⚠️ AVISO: O item '{nome_nota}' não possui sinônimo no dicionário e será ignorado.")
@@ -71,7 +73,8 @@ def consolidar_com_dicionario(arquivo_contagem, arquivo_compra, arquivo_dict="pu
         resultado.append({
             "nome": nome,
             "quantidade": round(dados["quantidade"], 3),
-            "unidade": dados["unidade"]
+            "unidade": dados["unidade"],
+            "quantidadeContagem": dados["quantidadeContagem"]
         })
 
     with open(arquivo_saida, "w", encoding="utf-8") as f:

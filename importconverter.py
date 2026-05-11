@@ -18,7 +18,7 @@ def converter_estoque_para_csv(arquivo_json):
             writer.writerow(['C'])
             
             # Linha 2: Cabeçalhos
-            headers = ['command', 'alternativeIdentifier', 'CF_UN', 'CF_Quantidade']
+            headers = ['command', 'alternativeIdentifier', 'CF_UN', 'CF_Quantidade', 'CF_QuantidadeContagem']
             writer.writerow(headers)
             
             # Dados do estoque
@@ -27,7 +27,8 @@ def converter_estoque_para_csv(arquivo_json):
                     'I',                           
                     item.get('nome', ''),          
                     item.get('unidade', ''),       
-                    item.get('quantidade', 0)      
+                    item.get('quantidade', 0),      
+                    item.get('quantidadeContagem', 0)
                 ])
                 
         print(f"Sucesso! Arquivo '{arquivo_saida}' gerado com sucesso.")
