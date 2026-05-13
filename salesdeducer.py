@@ -18,9 +18,12 @@ def processar_estoque(arquivo_estoque, arquivo_vendas, arquivo_dicionario, arqui
         return
 
     # Mapeia o estoque para facilitar a busca
+    print(f"DEBUG: Primeiros 2 itens do estoque carregado: {estoque_lista[:2]}")
     estoque_map = {}
     for item in estoque_lista:
         nome = item.get("nome", "").strip()
+        if not nome:
+            print(f"DEBUG: Item sem nome encontrado no estoque! Chaves disponíveis: {item.keys()}")
         try:
             qtd = float(str(item.get("quantidade", "0")).replace(",", "."))
         except ValueError:
@@ -53,11 +56,13 @@ def processar_estoque(arquivo_estoque, arquivo_vendas, arquivo_dicionario, arqui
 
         # REGRA 1: Se o item está no dicionário carregado do JSON
         if nome_venda in sales_dict:
+            print(f"DEBUG: Processando {nome_venda} (No Dicionário)")
             componentes = sales_dict[nome_venda]
             for nome_componente, info_componente in componentes.items():
                 if nome_componente in estoque_map:
                     deducao = info_componente["quantidade"] * qtd_vendida
                     estoque_map[nome_componente]["quantidade"] -= deducao
+                    print(f"  -> Reduzindo {nome_componente}: {qtd_antes} -> {estoque_map[nome_componente]['quantidade']}")
                 else:
                     print(f"Aviso: Componente '{nome_componente}' não encontrado no estoque.")
         

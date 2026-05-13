@@ -36,6 +36,8 @@ def convert_report(csv_file_path, json_output_path):
                 
                 # Aplicamos a tradução/correção no nome
                 nome_corrigido = fix_mojibake(nome_bruto)
+                if "*" in str(nome_bruto):
+                    print(f"DEBUG: Item com asterisco: Original='{nome_bruto}' -> Corrigido='{nome_corrigido}'")
                 
                 quantidade = string_to_float(row.get('Quantidade'))
                 
