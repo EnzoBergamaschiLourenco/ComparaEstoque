@@ -148,7 +148,7 @@ def processar_export_csv(caminho_csv):
             # Se falhar, reseta o ponteiro e tenta Latin-1
             if hasattr(caminho_csv, 'seek'):
                 caminho_csv.seek(0)
-            df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='latin-1')
+            df = pd.read_csv(caminho_csv, sep=None, skiprows=1, encoding='latin-1')
 
         if df is None or df.empty:
             print("Erro: DataFrame vazio após leitura do CSV.")
