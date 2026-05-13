@@ -144,11 +144,11 @@ st.title("📦 Sistema de Automação de Estoque")
 def ler_csv_seguro(uploaded_file):
     try:
         # Tenta UTF-8 primeiro
-        return pd.read_csv(uploaded_file, sep=None, engine="python", encoding="utf-8")
+        return pd.read_csv(uploaded_file, sep=";", engine="python", skiprows=1, encoding="utf-8")
     except:
         try:
             uploaded_file.seek(0)
-            return pd.read_csv(uploaded_file, sep=None, engine="python", encoding="latin-1")
+            return pd.read_csv(uploaded_file, sep=";", engine="python", skiprows=1, encoding="latin-1")
         except Exception as e:
             st.error(f"Erro ao ler CSV: {e}")
             return None
