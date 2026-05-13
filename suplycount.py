@@ -134,22 +134,42 @@ def extrair_produtos(url):
         print("Erro detalhado:", e)
 
 def processar_export_csv(caminho_csv):
-    """Lê o Cadastro_Itens.csv e retorna a lista de produtos"""
+    """Lê o Cadastro_Itens.csv e retorna a lista de produtos de forma robusta"""
     try:
-        df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='utf-8')
-        df_contagem = df[df['ATIVO ITEM'] == 1]
+        # 1. Tentar ler com latin-1 (comum em exports brasileiros do Excel) se o utf-8 falhar
+        try:
+            df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='utf-8')
+        except UnicodeDecodeError:
+            df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='latin-1')
+
+        # 2. Limpar espaços em branco dos nomes das colunas (evita erros de 'DESCRIÇÃO ITEM ' com espaço)
+        df.columns = df.columns.str.strip()
+
+        # 3. Garantir que a coluna ATIVO ITEM seja tratada como string para comparação segura
+        # Isso evita problemas se o pandas ler como 1.0 (float) ou '1' (string)
+        df['ATIVO ITEM'] = df['ATIVO ITEM'].astype(str).str.strip()
+        df_contagem = df[df['ATIVO ITEM'] == '1']
         
         produtos = []
         for _, row in df_contagem.iterrows():
+            # Verificamos se a descrição não é nula ou 'Padrão' (como na primeira linha do seu CSV)
+            nome_item = str(row['DESCRIÇÃO ITEM']).strip()
+            if not nome_item or nome_item.lower() == 'padrão':
+                continue
+
             produtos.append({
-                "nome": str(row['DESCRIÇÃO ITEM']),
+                "nome": nome_item,
                 "unidade": str(row['Unidade de medida']),
                 "quantidade": float(row['Quantidade']) if pd.notnull(row['Quantidade']) else 0.0,
                 "quantidadeContagem": float(row['QuantidadeContagem']) if pd.notnull(row['QuantidadeContagem']) else 0.0
             })
-        return produtos # Retorna uma lista
+        
+        print(f"Sucesso: {len(produtos)} itens ativos carregados do CSV.")
+        return produtos
+
     except Exception as e:
-        print(f"Erro ao ler CSV: {e}")
+        # Importante: No Streamlit, use st.error(e) se quiser ver o erro na tela
+        print(f"Erro crítico ao ler CSV: {e}")
         return []
 
 # --- FUNÇÃO DE CONSOLIDAÇÃO CORRIGIDA ---
