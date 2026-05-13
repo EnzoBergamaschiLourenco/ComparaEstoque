@@ -155,7 +155,12 @@ def processar_export_csv(caminho_csv):
             return []
 
         # Limpar nomes das colunas (remove espaços e caracteres invisíveis como o BOM)
-        df.columns = [str(col).replace('\ufeff', '').strip() for col in df.columns]
+        df.columns = (
+            df.columns
+            .str.replace('\ufeff', '', regex=False)
+            .str.strip()
+            .str.upper()
+        )
 
         # Filtro Robusto para ATIVO ITEM (trata 1, "1", 1.0)
         # Usamos errors='coerce' para transformar lixo em NaN e fillna(0) para segurança
@@ -167,7 +172,7 @@ def processar_export_csv(caminho_csv):
         produtos = []
         for _, row in df_contagem.iterrows():
             nome_item = str(row.get('DESCRIÇÃO ITEM', '')).strip()
-            st.write([repr(col) for col in df.columns])
+            
             # Pula itens sem nome ou marcados como "Padrão"
             if not nome_item or nome_item.lower() == 'padrão':
                 continue
