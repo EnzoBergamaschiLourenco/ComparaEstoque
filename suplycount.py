@@ -136,50 +136,52 @@ def extrair_produtos(url):
 def processar_export_csv(caminho_csv):
     """Lê o Cadastro_Itens.csv e retorna a lista de produtos de forma robusta"""
     try:
-        # 1. Tentar ler com latin-1 (comum em exports brasileiros do Excel) se o utf-8 falhar
+        # 1. Tentativa de leitura com encodings comuns
         try:
             df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='utf-8')
-        except UnicodeDecodeError:
+        except:
             df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='latin-1')
 
-        # 2. Limpar espaços em branco dos nomes das colunas (evita erros de 'DESCRIÇÃO ITEM ' com espaço)
-        df.columns = df.columns.str.strip()
+        # 2. Limpar nomes das colunas (remove espaços e o caractere BOM \ufeff)
+        df.columns = [str(col).replace('\ufeff', '').strip() for col in df.columns]
 
-        # 3. Garantir que a coluna ATIVO ITEM seja tratada como string para comparação segura
-        # Isso evita problemas se o pandas ler como 1.0 (float) ou '1' (string)
-        df['ATIVO ITEM'] = df['ATIVO ITEM'].astype(str).str.strip()
-        df_contagem = df[df['ATIVO ITEM'] == '1']
+        # 3. Filtro Robusto para ATIVO ITEM (trata 1, "1", 1.0)
+        df['ATIVO ITEM'] = pd.to_numeric(df['ATIVO ITEM'], errors='coerce').fillna(0).astype(int)
+        df_contagem = df[df['ATIVO ITEM'] == 1].copy()
         
         produtos = []
         for _, row in df_contagem.iterrows():
-            # Verificamos se a descrição não é nula ou 'Padrão' (como na primeira linha do seu CSV)
-            nome_item = str(row['DESCRIÇÃO ITEM']).strip()
+            nome_item = str(row.get('DESCRIÇÃO ITEM', '')).strip()
+            
+            # Pula itens sem nome ou marcados como "Padrão"
             if not nome_item or nome_item.lower() == 'padrão':
                 continue
 
+            # Função interna para converter números com segurança (trata vírgula e vazios)
+            def safe_float(val):
+                if pd.isna(val) or str(val).strip() == '':
+                    return 0.0
+                try:
+                    # Converte para string, troca vírgula por ponto e vira float
+                    return float(str(val).replace(',', '.'))
+                except:
+                    return 0.0
+
             produtos.append({
                 "nome": nome_item,
-                "unidade": str(row['Unidade de medida']),
-                "quantidade": float(row['Quantidade']) if pd.notnull(row['Quantidade']) else 0.0,
-                "quantidadeContagem": float(row['QuantidadeContagem']) if pd.notnull(row['QuantidadeContagem']) else 0.0
+                "unidade": str(row.get('Unidade de medida', 'UN')),
+                "quantidade": safe_float(row.get('Quantidade')),
+                "quantidadeContagem": safe_float(row.get('QuantidadeContagem'))
             })
         
         print(f"Sucesso: {len(produtos)} itens ativos carregados do CSV.")
         return produtos
 
     except Exception as e:
-        # Importante: No Streamlit, use st.error(e) se quiser ver o erro na tela
         print(f"Erro crítico ao ler CSV: {e}")
         return []
 
-# --- FUNÇÃO DE CONSOLIDAÇÃO CORRIGIDA ---
-
 def obter_contagem_consolidada(email, senha, caminho_csv):
-    """
-    Consolida dados do CSV e Email. 
-    Se o item existir em ambos, a quantidade do Email prevalece.
-    Retorna o caminho do CSV gerado, pronto para ser usado no convert_report().
-    """
     total_estoque = {}
     dados_email = []
     dados_csv = []
@@ -190,94 +192,45 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
         if link:
             dados_email = extrair_produtos(link)
     
-    if isinstance(dados_email, tuple):
-        dados_email = dados_email[0] if (len(dados_email) > 0 and isinstance(dados_email[0], list)) else []
-    elif not isinstance(dados_email, list):
+    # Normalização de dados_email
+    if not isinstance(dados_email, list):
         dados_email = []
 
     # 2. Obter dados do CSV
-    if caminho_csv and os.path.exists(caminho_csv):
-        dados_csv = processar_export_csv(caminho_csv)
+    if caminho_csv:
+        # Se for um caminho de arquivo, verifica se existe. Se for objeto (Streamlit), lê direto.
+        if isinstance(caminho_csv, str) and os.path.exists(caminho_csv):
+            dados_csv = processar_export_csv(caminho_csv)
+        elif not isinstance(caminho_csv, str):
+             dados_csv = processar_export_csv(caminho_csv)
     
-    if isinstance(dados_csv, tuple):
-        dados_csv = dados_csv[0] if (len(dados_csv) > 0 and isinstance(dados_csv[0], list)) else []
-    elif not isinstance(dados_csv, list):
+    if not isinstance(dados_csv, list):
         dados_csv = []
 
-    # 3. Consolidação com Regra de Prioridade
-    
-    # Passo A: Processar CSV primeiro (Base)
+    # 3. Consolidação (CSV como base, Email tem prioridade)
+    # Passo A: Processar CSV
     for item in dados_csv:
-        if isinstance(item, dict) and 'nome' in item:
-            nome = str(item['nome']).strip()
-            try:
-                qtd = float(item.get('quantidade', 0))
-            except (ValueError, TypeError):
-                qtd = 0.0
-            try:
-                qtdC = float(item.get('quantidadeContagem', 0))
-            except (ValueError, TypeError):
-                qtdC = 0.0
-            
-            # Se houver duplicatas dentro do PRÓPRIO CSV, somamos
-            if nome in total_estoque:
-                total_estoque[nome]['quantidade'] += qtd
-                total_estoque[nome]['quantidadeContagem'] += qtdC
-            else:
-                total_estoque[nome] = item.copy()
-                total_estoque[nome]['quantidade'] = qtd
-                total_estoque[nome]['quantidadeContagem'] = qtdC
+        nome = item['nome']
+        total_estoque[nome] = item.copy()
 
-    # Passo B: Processar Email (Prioridade)
-    # Criamos um dicionário temporário para o email para somar duplicatas internas do email antes da sobreposição
-    estoque_email_temp = {}
+    # Passo B: Processar Email e Sobrepor
     for item in dados_email:
-        if isinstance(item, dict) and 'nome' in item:
-            nome = str(item['nome']).strip()
-            try:
-                qtd = float(item.get('quantidade', 0))
-            except (ValueError, TypeError):
-                qtd = 0.0
-            try:
-                qtdC = float(item.get('quantidadeContagem', 0))
-            except (ValueError, TypeError):
-                qtdC = 0.0
-                
-            if nome in estoque_email_temp:
-                estoque_email_temp[nome]['quantidade'] += qtd
-                estoque_email_temp[nome]['quantidadeContagem'] += qtdC
-            else:
-                estoque_email_temp[nome] = item.copy()
-                estoque_email_temp[nome]['quantidade'] = qtd
-                estoque_email_temp[nome]['quantidadeContagem'] = qtdC
-
-    # Passo C: Sobrepor os dados do CSV com os do Email
-    for nome, item_email in estoque_email_temp.items():
-        total_estoque[nome] = item_email
+        nome = item['nome']
+        total_estoque[nome] = item.copy()
 
     resultado_final = list(total_estoque.values())
     
     if not resultado_final:
         return None
 
-    # --- LÓGICA DE EXPORTAÇÃO PARA CSV (FORMATO DO CONVERT_REPORT) ---
+    # 4. Exportação para CSV final
     arquivo_saida = "produtos_consolidado.csv"
-    
-    # Abrimos usando latin-1 para manter o padrão que o seu convert_report.py lê
     with open(arquivo_saida, mode="w", encoding="latin-1", errors="replace", newline="") as f:
         writer = csv.writer(f, delimiter=';')
-        
-        # Cabeçalhos exatos que o DictReader do reportconverter.py vai procurar
         writer.writerow(['Descrição', 'Quantidade'])
-        
         for item in resultado_final:
-            nome = item.get('nome', '')
+            # Formata para padrão brasileiro (vírgula decimal) para o convert_report ler
+            qtd = str(item.get('quantidade', 0.0)).replace('.', ',')
+            writer.writerow([item['nome'], qtd])
             
-            # Formata a quantidade trocando ponto por vírgula (padrão do seu arquivo de vendas original)
-            # A função string_to_float() do seu convert_report.py dará conta de converter isso de volta
-            quantidade_formatada = str(item.get('quantidade', 0.0)).replace('.', ',')
-            
-            writer.writerow([nome, quantidade_formatada])
-            
-    # Retorna o nome do arquivo para você passar direto para a próxima função
     return arquivo_saida
