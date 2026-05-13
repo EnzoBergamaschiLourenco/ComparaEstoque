@@ -1,5 +1,7 @@
 import csv
 import json
+import streamlit as st
+
 
 def fix_mojibake(text):
     """
@@ -37,7 +39,7 @@ def convert_report(csv_file_path, json_output_path):
                 # Aplicamos a tradução/correção no nome
                 nome_corrigido = fix_mojibake(nome_bruto)
                 if "*" in str(nome_bruto):
-                    print(f"DEBUG: Item com asterisco: Original='{nome_bruto}' -> Corrigido='{nome_corrigido}'")
+                    st.write(f"DEBUG: Item com asterisco: Original='{nome_bruto}' -> Corrigido='{nome_corrigido}'")
                 
                 quantidade = string_to_float(row.get('Quantidade'))
                 
@@ -51,10 +53,10 @@ def convert_report(csv_file_path, json_output_path):
 
         with open(json_output_path, 'w', encoding='utf-8') as json_file:
             json.dump(output_data, json_file, indent=4, ensure_ascii=False)
-            print(f"Sucesso! Arquivo salvo em: {json_output_path}")
+            st.write(f"Sucesso! Arquivo salvo em: {json_output_path}")
             
     except FileNotFoundError:
-        print(f"Erro: Arquivo {csv_file_path} não encontrado.")
+        st.write(f"Erro: Arquivo {csv_file_path} não encontrado.")
 
 if __name__ == "__main__":
     # Certifique-se de que o nome do arquivo coincide com o seu projeto de logística
