@@ -225,7 +225,6 @@ if st.session_state.fase == 'inicio':
 
                 # Salva temporário só se necessário
                 caminho_temp_csv = "temp_cadastro.csv"
-                df_cadastro.to_csv(caminho_temp_csv, index=False)
             else:
                 caminho_temp_csv = None
 
@@ -235,7 +234,7 @@ if st.session_state.fase == 'inicio':
             caminho_csv_gerado = obter_contagem_consolidada(
                 email_user if tem_email else None,
                 senha_user if tem_email else None,
-                caminho_temp_csv
+                arquivo_csv
             )
 
             if caminho_csv_gerado:
