@@ -139,6 +139,21 @@ st.set_page_config(page_title="Automação de Estoque", layout="centered")
 st.title("📦 Sistema de Automação de Estoque")
 
 # ==========================================
+# FUNÇÃO AUXILIAR PARA LER CSV COM SEGURANÇA
+# ==========================================
+def ler_csv_seguro(uploaded_file):
+    try:
+        # Tenta UTF-8 primeiro
+        return pd.read_csv(uploaded_file, sep=None, engine="python", encoding="utf-8")
+    except:
+        try:
+            uploaded_file.seek(0)
+            return pd.read_csv(uploaded_file, sep=None, engine="python", encoding="latin-1")
+        except Exception as e:
+            st.error(f"Erro ao ler CSV: {e}")
+            return None
+
+# ==========================================
 # FASE 0: PREENCHIMENTO DO FORMULÁRIO
 # ==========================================
 if st.session_state.fase == 'inicio':
@@ -146,6 +161,7 @@ if st.session_state.fase == 'inicio':
     st.caption("Escolha uma opção: Suba o arquivo exportado OU use as credenciais de e-mail.")
     
     col1, col2, col3 = st.columns([1, 1, 1.5])
+    
     with col1: 
         email_user = st.text_input("E-mail IMAP", placeholder="usuario@dominio.com")
     with col2: 
@@ -155,108 +171,150 @@ if st.session_state.fase == 'inicio':
 
     st.header("2. Notas Fiscais de Compra (NFC-e)")
     for i, url in enumerate(st.session_state.lista_nfe):
-        st.session_state.lista_nfe[i] = st.text_input(f"URL da Nota Fiscal {i+1}", value=url, key=f"nfe_{i}")
+        st.session_state.lista_nfe[i] = st.text_input(
+            f"URL da Nota Fiscal {i+1}", 
+            value=url, 
+            key=f"nfe_{i}"
+        )
 
     if st.button("➕ Adicionar outra Nota"):
         st.session_state.lista_nfe.append("")
         st.rerun()
 
     st.header("3. Relatório de Vendas")
-    arquivo_vendas = st.file_uploader("Faça upload do relatório ABC de Vendas (.csv)", type=["csv"])
+    arquivo_vendas = st.file_uploader(
+        "Faça upload do relatório ABC de Vendas (.csv)", 
+        type=["csv"]
+    )
 
     st.divider()
 
     if st.button("🚀 Iniciar Processamento", use_container_width=True):
-        # Validação lógica do novo fluxo
-        tem_email = email_user and senha_user
+
+        tem_email = bool(email_user and senha_user)
         tem_csv = arquivo_csv is not None
-        
+
         if not arquivo_vendas:
-            st.error("❌ Erro: O Relatório de Vendas é obrigatório.")
+            st.error("❌ O Relatório de Vendas é obrigatório.")
             st.stop()
-            
+
         if not (tem_email or tem_csv):
-            st.error("⚠️ Erro: Forneça as credenciais de e-mail OU o arquivo Cadastro_Itens.csv.")
+            st.error("⚠️ Forneça e-mail OU CSV de cadastro.")
             st.stop()
 
         sucesso_contagem = False
-        
-        # 1. Obter a Contagem (CSV ou Email)
-        with st.status("Consolidando dados de contagem...") as status:
-            caminho_temp_csv = None
-            
-            # Se o usuário subiu um CSV, salvamos temporariamente
-            if tem_csv:
-                caminho_temp_csv = "temp_cadastro.csv"
-                with open(caminho_temp_csv, "wb") as f:
-                    f.write(arquivo_csv.getbuffer())
 
-            status.write("⏳ Processando fontes de dados disponíveis...")
-            
-            # Chama a função; se um dos parâmetros for None, suplycount.py tratará internamente
+        # ==========================================
+        # 1. PROCESSAR CONTAGEM
+        # ==========================================
+        with st.status("Consolidando dados de contagem...") as status:
+
+            df_cadastro = None
+
+            if tem_csv:
+                status.write("📂 Lendo CSV de cadastro...")
+
+                df_cadastro = ler_csv_seguro(arquivo_csv)
+
+                if df_cadastro is None or df_cadastro.empty:
+                    st.error("❌ CSV inválido ou vazio.")
+                    st.stop()
+
+                # DEBUG (opcional)
+                st.write("Prévia do CSV:", df_cadastro.head())
+
+                # Salva temporário só se necessário
+                caminho_temp_csv = "temp_cadastro.csv"
+                df_cadastro.to_csv(caminho_temp_csv, index=False)
+            else:
+                caminho_temp_csv = None
+
+            status.write("⏳ Consolidando dados...")
+
             caminho_csv_gerado = obter_contagem_consolidada(
-                email_user if tem_email else None, 
-                senha_user if tem_email else None, 
+                email_user if tem_email else None,
+                senha_user if tem_email else None,
                 caminho_temp_csv
             )
-            
+
             if caminho_csv_gerado:
-                st.success(f"✅ Sucesso! {len(caminho_csv_gerado)} itens consolidados.")
+                st.success("✅ Contagem consolidada com sucesso!")
                 sucesso_contagem = True
             else:
-                st.error("❌ Não foi possível obter dados de contagem das fontes fornecidas.")
+                st.error("❌ Falha ao obter contagem.")
 
-        # Limpeza do arquivo temporário do CSV se ele existiu
+        # Limpeza
         if tem_csv and os.path.exists("temp_cadastro.csv"):
             os.remove("temp_cadastro.csv")
 
-        # 2. Se a contagem foi obtida, processar NF-es e Vendas
+        # ==========================================
+        # 2. PROCESSAR NF + VENDAS
+        # ==========================================
         if sucesso_contagem:
             with st.status("Processando NF-es e Vendas...") as status:
-                if not arquivo_vendas:
-                    st.error("❌ O arquivo de vendas é obrigatório.")
-                    st.stop()
 
-                # Extração NF-e
                 compras_totais = []
+
                 for url in st.session_state.lista_nfe:
                     if url.strip():
-                        status.write(f"📄 Lendo Nota: {url[:30]}...")
+                        status.write(f"📄 Lendo Nota: {url[:40]}...")
                         dados_nota = extrair_dados_tabresult(url)
-                        if dados_nota: compras_totais.extend(dados_nota)
-                
+
+                        if dados_nota:
+                            compras_totais.extend(dados_nota)
+
                 with open("produtos_compra.json", "w", encoding="utf-8") as f:
                     json.dump(compras_totais, f, ensure_ascii=False, indent=4)
 
-                # Processamento Vendas
-                status.write("📊 Analisando relatório de vendas...")
-                with open("temp_vendas.csv", "wb") as f: 
-                    f.write(arquivo_vendas.getbuffer())
+                # ==========================
+                # VENDAS
+                # ==========================
+                status.write("📊 Processando vendas...")
+
+                df_vendas = ler_csv_seguro(arquivo_vendas)
+
+                if df_vendas is None or df_vendas.empty:
+                    st.error("❌ CSV de vendas inválido.")
+                    st.stop()
+
+                df_vendas.to_csv("temp_vendas.csv", index=False)
+
                 convert_report(caminho_csv_gerado, 'resultado_vendas.json')
 
-                # Verificação de Mapeamento
-                status.write("🔍 Verificando dicionário de itens...")
+                # ==========================
+                # MAPEAMENTO
+                # ==========================
+                status.write("🔍 Verificando dicionário...")
+
                 try:
                     with open("purchasedictionary.json", "r", encoding="utf-8") as f:
                         p_dict = json.load(f)
-                except FileNotFoundError:
+                except:
                     p_dict = {}
 
-                nomes_conhecidos = []
-                for v in p_dict.values():
-                    if "sinonimos" in v:
-                        for s in v["sinonimos"]:
-                            nomes_conhecidos.append(s["nome"])
+                nomes_conhecidos = [
+                    s["nome"]
+                    for v in p_dict.values()
+                    if "sinonimos" in v
+                    for s in v["sinonimos"]
+                ]
 
-                nao_mapeados = [item for item in compras_totais if item["nome"] not in nomes_conhecidos]
+                nao_mapeados = [
+                    item for item in compras_totais 
+                    if item["nome"] not in nomes_conhecidos
+                ]
 
                 if nao_mapeados:
                     st.session_state.itens_pendentes = nao_mapeados
                     st.session_state.fase = 'mapeamento'
                 else:
                     st.session_state.fase = 'finalizacao'
-                
-                status.update(label="🚀 Tudo pronto! Mudando de fase...", state="complete")
+
+                status.update(
+                    label="🚀 Finalizado!",
+                    state="complete"
+                )
+
                 st.rerun()
 # ==========================================
 # FASE 1: RESOLUÇÃO DE ITENS DESCONHECIDOS

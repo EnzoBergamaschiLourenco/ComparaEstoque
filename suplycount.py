@@ -136,17 +136,32 @@ def extrair_produtos(url):
 def processar_export_csv(caminho_csv):
     """Lê o Cadastro_Itens.csv e retorna a lista de produtos de forma robusta"""
     try:
-        # 1. Tentativa de leitura com encodings comuns
+        # Se for um arquivo do Streamlit, precisamos garantir que o ponteiro esteja no início
+        if hasattr(caminho_csv, 'seek'):
+            caminho_csv.seek(0)
+
+        df = None
+        # Tenta UTF-8
         try:
             df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='utf-8')
-        except:
+        except Exception:
+            # Se falhar, reseta o ponteiro e tenta Latin-1
+            if hasattr(caminho_csv, 'seek'):
+                caminho_csv.seek(0)
             df = pd.read_csv(caminho_csv, sep=';', skiprows=1, encoding='latin-1')
 
-        # 2. Limpar nomes das colunas (remove espaços e o caractere BOM \ufeff)
+        if df is None or df.empty:
+            print("Erro: DataFrame vazio após leitura do CSV.")
+            return []
+
+        # Limpar nomes das colunas (remove espaços e caracteres invisíveis como o BOM)
         df.columns = [str(col).replace('\ufeff', '').strip() for col in df.columns]
 
-        # 3. Filtro Robusto para ATIVO ITEM (trata 1, "1", 1.0)
+        # Filtro Robusto para ATIVO ITEM (trata 1, "1", 1.0)
+        # Usamos errors='coerce' para transformar lixo em NaN e fillna(0) para segurança
         df['ATIVO ITEM'] = pd.to_numeric(df['ATIVO ITEM'], errors='coerce').fillna(0).astype(int)
+        
+        # Filtramos apenas os ativos (1)
         df_contagem = df[df['ATIVO ITEM'] == 1].copy()
         
         produtos = []
@@ -157,12 +172,10 @@ def processar_export_csv(caminho_csv):
             if not nome_item or nome_item.lower() == 'padrão':
                 continue
 
-            # Função interna para converter números com segurança (trata vírgula e vazios)
             def safe_float(val):
                 if pd.isna(val) or str(val).strip() == '':
                     return 0.0
                 try:
-                    # Converte para string, troca vírgula por ponto e vira float
                     return float(str(val).replace(',', '.'))
                 except:
                     return 0.0
@@ -174,11 +187,11 @@ def processar_export_csv(caminho_csv):
                 "quantidadeContagem": safe_float(row.get('QuantidadeContagem'))
             })
         
-        print(f"Sucesso: {len(produtos)} itens ativos carregados do CSV.")
+        print(f"Sucesso: {len(produtos)} itens ativos carregados.")
         return produtos
 
     except Exception as e:
-        print(f"Erro crítico ao ler CSV: {e}")
+        st.error(f"Erro ao processar CSV no site: {e}")
         return []
 
 def obter_contagem_consolidada(email, senha, caminho_csv):
