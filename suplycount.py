@@ -167,7 +167,7 @@ def processar_export_csv(caminho_csv):
         produtos = []
         for _, row in df_contagem.iterrows():
             nome_item = str(row.get('DESCRIÇÃO ITEM', '')).strip()
-            print([repr(col) for col in df.columns])
+            st.write([repr(col) for col in df.columns])
             # Pula itens sem nome ou marcados como "Padrão"
             if not nome_item or nome_item.lower() == 'padrão':
                 continue
