@@ -225,7 +225,7 @@ if st.session_state.fase == 'inicio':
 
                 # Salva temporário só se necessário
                 caminho_temp_csv = "temp_cadastro.csv"
-                df_cadastro.to_csv(caminho_temp_csv, index=False)
+                df_cadastro.to_csv(caminho_temp_csv, index=False, sep=";")
             else:
                 caminho_temp_csv = None
 
