@@ -9,6 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 import streamlit as st
 import os
+import csv
 
 def buscar_link(email_usuario, senha_usuario):
     """
@@ -157,6 +158,7 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     """
     Consolida dados do CSV e Email. 
     Se o item existir em ambos, a quantidade do Email prevalece.
+    Retorna o caminho do CSV gerado, pronto para ser usado no convert_report().
     """
     total_estoque = {}
     dados_email = []
@@ -231,8 +233,6 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
 
     # Passo C: Sobrepor os dados do CSV com os do Email
     for nome, item_email in estoque_email_temp.items():
-        # Isso vai substituir o item do CSV pelo do Email se o nome for igual,
-        # ou adicionar o item se ele só existir no Email.
         total_estoque[nome] = item_email
 
     resultado_final = list(total_estoque.values())
@@ -240,7 +240,24 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     if not resultado_final:
         return None
 
-    with open("produtos_contagem.json", "w", encoding="utf-8") as f:
-        json.dump(resultado_final, f, indent=4, ensure_ascii=False)
+    # --- LÓGICA DE EXPORTAÇÃO PARA CSV (FORMATO DO CONVERT_REPORT) ---
+    arquivo_saida = "produtos_consolidado.csv"
+    
+    # Abrimos usando latin-1 para manter o padrão que o seu convert_report.py lê
+    with open(arquivo_saida, mode="w", encoding="latin-1", errors="replace", newline="") as f:
+        writer = csv.writer(f, delimiter=';')
         
-    return resultado_final
+        # Cabeçalhos exatos que o DictReader do reportconverter.py vai procurar
+        writer.writerow(['Descrição', 'Quantidade'])
+        
+        for item in resultado_final:
+            nome = item.get('nome', '')
+            
+            # Formata a quantidade trocando ponto por vírgula (padrão do seu arquivo de vendas original)
+            # A função string_to_float() do seu convert_report.py dará conta de converter isso de volta
+            quantidade_formatada = str(item.get('quantidade', 0.0)).replace('.', ',')
+            
+            writer.writerow([nome, quantidade_formatada])
+            
+    # Retorna o nome do arquivo para você passar direto para a próxima função
+    return arquivo_saida
