@@ -230,6 +230,7 @@ if st.session_state.fase == 'inicio':
                 caminho_temp_csv = None
 
             status.write("⏳ Consolidando dados...")
+            st.write("Colunas detectadas:", df_cadastro.columns.tolist())
 
             caminho_csv_gerado = obter_contagem_consolidada(
                 email_user if tem_email else None,
