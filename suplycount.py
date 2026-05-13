@@ -244,7 +244,7 @@ def obter_contagem_consolidada(email, senha, caminho_csv):
     arquivo_saida = "produtos_consolidado.csv"
     
     # Abrimos usando latin-1 para manter o padrão que o seu convert_report.py lê
-    with open(arquivo_saida, mode="w", encoding="latin-1", errors="replace", newline="") as f:
+    with open(arquivo_saida, mode="w", encoding="utf-8", errors="replace", newline="") as f:
         writer = csv.writer(f, delimiter=';')
         
         # Cabeçalhos exatos que o DictReader do reportconverter.py vai procurar
