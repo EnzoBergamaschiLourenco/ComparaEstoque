@@ -194,14 +194,14 @@ if st.session_state.fase == 'inicio':
             status.write("⏳ Processando fontes de dados disponíveis...")
             
             # Chama a função; se um dos parâmetros for None, suplycount.py tratará internamente
-            resultado_contagem = obter_contagem_consolidada(
+            caminho_csv_gerado = obter_contagem_consolidada(
                 email_user if tem_email else None, 
                 senha_user if tem_email else None, 
                 caminho_temp_csv
             )
             
-            if resultado_contagem:
-                st.success(f"✅ Sucesso! {len(resultado_contagem)} itens consolidados.")
+            if caminho_csv_gerado:
+                st.success(f"✅ Sucesso! {len(caminho_csv_gerado)} itens consolidados.")
                 sucesso_contagem = True
             else:
                 st.error("❌ Não foi possível obter dados de contagem das fontes fornecidas.")
@@ -232,7 +232,7 @@ if st.session_state.fase == 'inicio':
                 status.write("📊 Analisando relatório de vendas...")
                 with open("temp_vendas.csv", "wb") as f: 
                     f.write(arquivo_vendas.getbuffer())
-                convert_report("temp_vendas.csv", 'resultado_vendas.json')
+                convert_report(caminho_csv_gerado, 'resultado_vendas.json')
 
                 # Verificação de Mapeamento
                 status.write("🔍 Verificando dicionário de itens...")
